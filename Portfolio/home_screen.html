@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en"><head> <!--  Basic page configuration  -->
+
+<!--    meta data configuration, assets, Tailwind CSS -->
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Xinuo UX Design</title>
+<link crossorigin="" href="https://fonts.gstatic.com/" rel="preconnect"/>
+<link as="style" href="https://fonts.googleapis.com/css2?display=swap&amp;family=Inter:wght@400;500;700;900&amp;family=Noto+Sans:wght@400;500;700;900" onload="this.rel='stylesheet'" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<style type="text/tailwindcss">
+        :root {
+            --tang-blue: #436C85;
+            --tang-red: #B73F42;
+            --tang-ochre: #DE9960;
+            --tang-green: #82B29B;
+            --tang-cream: #EEE6DB;
+        }
+    </style>
+
+<!--     use tailwind.config to extend Tailwind theme to unify page styles -->
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "var(--tang-blue)",
+                        "accent-red": "var(--tang-red)",
+                        "accent-ochre": "var(--tang-ochre)",
+                        "accent-green": "var(--tang-green)",
+                        "background-light": "var(--tang-cream)",
+                        "background-dark": "#1a1816",
+                        // #B73F42 #1a1816
+                    },
+                    fontFamily: {
+                        "display": ["Inter", "Noto Sans"]
+                    },
+                    borderRadius: { "DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px" },
+                },
+            },
+        }
+    </script>
+</head>
+
+<!--Page main container (full-screen layout container)-->
+<body class="bg-background-light dark:bg-background-dark font-display text-gray-800 dark:text-background-light">
+<div class="relative flex h-screen w-full flex-col items-center justify-center overflow-hidden">
+
+<!-- Title, Subtitle, Button -->
+<div class="relative z-10 mx-auto max-w-4xl px-4 text-center">
+<div class="flex flex-col items-center justify-center gap-8">
+<div class="flex flex-col gap-4">
+<h1 class="text-5xl font-black tracking-tight text-primary dark:text-accent-ochre sm:text-6xl md:text-7xl" style="font-family: 'Noto Sans', sans-serif;">
+                    Xinuo Zhou
+                </h1>
+<p class="text-lg text-gray-700 dark:text-gray-300 md:text-xl">
+    UX designer focused on AR/VR; Want to engage user experiences.
+                </p>
+</div>
+<button onclick=window.location.href="project_showcase.html" class="flex h-12 min-w-[84px] cursor-pointer items-center justify-center overflow-hidden rounded-lg bg-accent-red px-8 text-base font-bold text-white shadow-lg transition-transform duration-200 hover:scale-105 hover:shadow-xl">
+<span>View Portfolio</span>
+</button>
+</div>
+</div>
+<!--<div class="absolute bottom-0 left-0 right-0 p-8 text-center text-gray-600 dark:text-gray-400">-->
+<!--<p class="text-sm">Scroll to explore</p>-->
+</div>
+</div>
+
+</body></html>

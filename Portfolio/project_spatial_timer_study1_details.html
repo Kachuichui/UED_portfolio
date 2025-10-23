@@ -1,0 +1,545 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8"/>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+    <title>Project one</title>
+    <link href="https://fonts.googleapis.com" rel="preconnect"/>
+    <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&amp;family=Noto+Sans+SC:wght@400;500;700&amp;display=swap"
+          rel="stylesheet"/>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+    <!--    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>-->
+    <style type="text/tailwindcss">
+        @layer theme {
+            :root {
+                --color-primary: #436C85;
+                --color-secondary: #B73F42;
+                --color-accent: #DE9960;
+                --color-success: #82B29B;
+                --color-background-light: #EEE6DB;
+                --color-background-dark: #2C2823;
+                --color-text-light: #436C85;
+                /*#1F1B17;*/
+                --color-text-dark: #EAE3D9;
+                --color-subtle-light: #DCD2C3;
+                --color-subtle-dark: #423C35;
+            }
+        }
+    </style>
+    <script>
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        primary: "var(--color-primary)",
+                        secondary: "var(--color-secondary)",
+                        accent: "var(--color-accent)",
+                        success: "var(--color-success)",
+                        "background-light": "var(--color-background-light)",
+                        "background-dark": "var(--color-background-dark)",
+                        "text-light": "var(--color-text-light)",
+                        "text-dark": "var(--color-text-dark)",
+                        "subtle-light": "var(--color-subtle-light)",
+                        "subtle-dark": "var(--color-subtle-dark)",
+                    },
+                    fontFamily: {
+                        display: ["Inter", "sans-serif"],
+                        // display: ["Playfair Display", "serif"],
+                        body: ["Noto Sans SC", "serif"],
+                        // body: ["Noto Sans SC", "sans-serif"],
+                    },
+                    borderRadius: {
+                        DEFAULT: "0.5rem",
+                        lg: "0.75rem",
+                        xl: "1rem",
+                        full: "9999px",
+                    },
+                    backgroundImage: {
+                        'tang-pattern': "url(\"data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23B73F42' fill-opacity='0.1'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E\")",
+                    }
+                },
+            },
+        };
+    </script>
+</head>
+
+<!--<!DOCTYPE html>-->
+<!--<html lang="en">-->
+<!--<head>-->
+<!--    <meta charset="utf-8"/>-->
+<!--    <meta content="width=device-width, initial-scale=1.0" name="viewport"/>-->
+<!--    <title>Design Portfolio</title>-->
+<!--    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>-->
+<!--    <link href="https://fonts.googleapis.com" rel="preconnect"/>-->
+<!--    <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>-->
+<!--    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;900&amp;family=Noto+Serif+SC:wght@400;700&amp;display=swap" rel="stylesheet"/>-->
+<!--    <script>-->
+<!--        tailwind.config = {-->
+<!--            darkMode: "class",-->
+<!--            theme: {-->
+<!--                extend: {-->
+<!--                    colors: {-->
+<!--                        "primary": "#436C85",-->
+<!--                        "secondary": "#B73F42",-->
+<!--                        "accent": "#DE9960",-->
+<!--                        "neutral": "#82B29B",-->
+<!--                        "base": "#EEE6DB",-->
+<!--                        "text-primary": "#1a1a1a",-->
+<!--                        "text-secondary": "#4d4d4d",-->
+<!--                        "background": "#EEE6DB",-->
+<!--                        "background-light":"#EEE6DB",-->
+<!--                        // "#fdfbf8"-->
+<!--                    },-->
+<!--                    fontFamily: {-->
+<!--                        "display": ["Inter", "sans-serif"],-->
+<!--                        "serif-sc": ['"Noto Serif SC"', 'serif'],-->
+<!--                    },-->
+<!--                    borderRadius: {-->
+<!--                        "DEFAULT": "0.5rem",-->
+<!--                        "lg": "0.75rem",-->
+<!--                        "xl": "1rem",-->
+<!--                        "full": "9999px"-->
+<!--                    },-->
+<!--                    backgroundImage: {-->
+<!--                        'tang-pattern': "url(\"data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%2382B29B' fill-opacity='0.1'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E\")",-->
+<!--                    }-->
+<!--                },-->
+<!--            },-->
+<!--        }-->
+<!--    </script>-->
+<!--    <style>-->
+<!--        .group:hover .group-hover\:block {-->
+<!--            display: block;-->
+<!--        }-->
+<!--        .text-shadow {-->
+<!--            text-shadow: 1px 1px 3px rgba(0,0,0,0.1);-->
+<!--        }-->
+<!--    </style>-->
+<!--</head>-->
+
+<body class="bg-background-light dark:bg-background-dark font-body text-text-light dark:text-text-dark bg-tang-pattern">
+<div class="flex flex-col min-h-screen bg-background-light/95 dark:bg-background-dark/95">
+    <header class="sticky top-0 z-10 bg-background-light/80 dark:bg-background-dark/80 backdrop-blur-sm border-b border-subtle-light dark:border-subtle-dark">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-16">
+
+
+                <!--                <div class="flex items-center gap-3">-->
+                <!--                    <div class="text-secondary w-8 h-8">-->
+                <!--                        <svg fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">-->
+                <!--                            <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 15.08V19H9.5v-1.92c-1.65-.23-3-1.63-3-3.38h1.5c0 1.03.74 1.9 1.75 2.11V14h1.5v1.88c1.65.23 3 1.63 3 3.38h-1.5c0-1.03-.74-1.9-1.75-2.11V15H11v2.08zM12 4c.83 0 1.5.67 1.5 1.5S12.83 7 12 7s-1.5-.67-1.5-1.5S11.17 4 12 4zm0 4c1.93 0 3.5 1.57 3.5 3.5S13.93 15 12 15s-3.5-1.57-3.5-3.5S10.07 8 12 8zm0 1.5c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2z"></path>-->
+                <!--                        </svg>-->
+                <!--                        <h1 onclick="window.location.href='home_screen.html'" class="text-2xl font-bold tracking-tight font-serif-sc text-primary cursor-pointer">Xinuo-->
+                <!--                            Zhou</h1>-->
+                <!--                    </div>-->
+                <!--                    -->
+                <!--                </div>-->
+
+                <div class="flex items-center gap-3">
+                    <svg class="h-8 w-8 text-secondary" fill="currentColor" viewBox="0 0 24 24"
+                         xmlns="http://www.w3.org/2000/svg">
+                        <path d="M12 2L1 6.5V17.5L12 22L23 17.5V6.5L12 2ZM11 12.44L4 8.5V16.34L11 20.24V12.44ZM13 12.44V20.24L20 16.34V8.5L13 12.44ZM12 4.1L18.93 7.5L12 10.9L5.07 7.5L12 4.1Z"></path>
+                    </svg>
+                    <h1 onclick="window.location.href='home_screen.html'"
+                        class="text-2xl font-bold tracking-tight font-serif-sc text-primary cursor-pointer">Xinuo
+                        Zhou</h1>
+                </div>
+
+
+                <nav class="hidden md:flex items-center space-x-8">
+                    <a onclick="window.location.href='about_me.html'"
+                       class="text-text-secondary hover:text-primary transition-colors font-medium cursor-pointer">About
+                        me</a>
+                    <a onclick="window.location.href='project_showcase.html'"
+                       class="text-secondary font-semibold cursor-pointer">Projects</a>
+                    <a onclick="window.location.href='contact_me.html'"
+                       class="text-text-secondary hover:text-primary transition-colors font-medium cursor-pointer">Contact</a>
+                </nav>
+
+                <button popovertarget="mobile-menu"
+                        class="md:hidden p-2 rounded-md text-text-secondary hover:text-primary hover:bg-primary/10 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-primary">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"
+                         xmlns="http://www.w3.org/2000/svg">
+                        <path d="M4 6h16M4 12h16M4 18h16" stroke-linecap="round" stroke-linejoin="round"
+                              stroke-width="2"></path>
+                    </svg>
+                </button>
+
+                <div id="mobile-menu" popover
+                     class="md:hidden m-0 mt-2 p-4 bg-background-light border border-base rounded-lg shadow-lg w-48">
+                    <nav class="flex flex-col gap-4">
+                        <a onclick="window.location.href='about_me.html'"
+                           class="text-text-secondary hover:text-primary transition-colors font-medium cursor-pointer">About
+                            me</a>
+                        <a onclick="window.location.href='project_showcase.html'"
+                           class="text-secondary font-semibold cursor-pointer">Projects</a>
+                        <a onclick="window.location.href='contact_me.html'"
+                           class="text-text-secondary hover:text-primary transition-colors font-medium cursor-pointer">Contact</a>
+                    </nav>
+                </div>
+
+
+            </div>
+        </div>
+    </header>
+
+
+    <main class="container mx-auto px-4 sm:px-6 lg:px-8 py-12 md:py-16">
+        <div class="max-w-4xl mx-auto">
+            <div class="mb-12 text-center">
+                <p class="text-sm font-semibold text-primary uppercase tracking-wider font-body">Case Study</p>
+                <h2 class="mt-2 text-4xl md:text-5xl font-extrabold tracking-tight font-display text-secondary">
+                    Exploring Perceptions of AR Technology in the kitchen</h2>
+            </div>
+            <div class="w-full h-96 rounded-lg overflow-hidden mb-12 shadow-lg border-4 border-subtle-light dark:border-subtle-dark">
+                <img alt="Study 1 Image" class="w-full h-full overflow-hidden object-cover object-center"
+                     src="study1_cover.png"/>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-12">
+                <div class="md:col-span-1">
+                    <div class="sticky top-24">
+                        <h3 class="text-lg font-display font-bold text-primary mb-4 border-b-2 border-accent pb-2">
+                            Project Details</h3>
+                        <dl class="space-y-4 font-body">
+                            <div>
+                                <dt class="text-sm font-medium text-text-light/70 dark:text-text-dark/70">Role</dt>
+                                <dd class="mt-1 text-base font-semibold">UX Designer</dd>
+                            </div>
+
+                            <div>
+                                <dt class="text-sm font-medium text-text-light/70 dark:text-text-dark/70">Duration</dt>
+                                <dd class="mt-1 text-base font-semibold">2 weeks</dd>
+                            </div>
+
+                            <div>
+                                <dt class="text-sm font-medium text-text-light/70 dark:text-text-dark/70">Tools</dt>
+                                <dd class="mt-1 text-base font-semibold">Miro, otter</dd>
+                            </div>
+
+                        </dl>
+
+                    </div>
+                </div>
+                <div class="md:col-span-2 space-y-12">
+                    <section>
+                        <h3 class="text-2xl font-display font-bold mb-4 text-secondary">Overview</h3>
+                        <p class="text-lg leading-relaxed text-text-light/90 dark:text-text-dark/90 font-body">
+                            This study investigates how people perceive the role of augmented reality (AR) technology in
+                            the kitchen and its application in cooking. Based on this purpose, I conducted a 10-minute
+                            semi-structured interview.
+                        </p>
+                    </section>
+                    <section>
+                        <h3 class="text-2xl font-display font-bold mb-4 text-secondary">Problem Statement</h3>
+                        <p class="text-lg leading-relaxed text-text-light/90 dark:text-text-dark/90 font-body">
+                            Many people encounter various challenges in daily cooking, such as poor time management,
+                            excessive
+                            cognitive load, and over-reliance on recipes. The original intention of this research is to
+                            gain an
+                            in-depth understanding of people's perceptions of AR technology in the kitchen, and explore
+                            how this
+                            technology can truly help them solve these problems, thereby improving the overall cooking
+                            experience.
+                        </p>
+                    </section>
+
+                    <section>
+                        <h3 class="text-2xl font-display font-bold mb-4 text-secondary">Methodology</h3>
+                        <p class="text-lg leading-relaxed text-text-light/90 dark:text-text-dark/90 font-body">
+                            To gain a deep understanding of users' thoughts and needs, we adopted the following
+                            qualitative research methods:</p>
+                        <ol class="list-none space-y-4 text-lg leading-relaxed text-text-light/90 dark:text-text-dark/90 font-body">
+                            <li class="flex items-start"><span>
+                                <strong>Semi-structured interviews:</strong> 17 college students aged between 21 and 24 were recruited. The interviews lasted 10 minutes, during which we obtained rich and in-depth insights by asking them questions about their cooking habits, perceptions of AR, functional needs, display preferences, etc. </span>
+                            </li>
+                            <li class="flex items-start"><span><strong>Data analysis:</strong>
+                                The interview data were analyzed using <strong> Affinity Diagrams</strong> and <strong> Inductive Coding</strong>. This process helped us organize the disorganized interview records into meaningful themes and extract key patterns and insights from them.
+                            </span>
+
+                        </ol>
+                    </section>
+
+                    <section>
+                        <h3 class="text-2xl font-display font-bold mb-4 text-secondary">Interview Structure</h3>
+                        <p class="text-lg leading-relaxed text-text-light/90 dark:text-text-dark/90 font-body">
+                            The interview followed a basic structure:</p>
+                        <ol class="list-none space-y-4 text-lg leading-relaxed text-text-light/90 dark:text-text-dark/90 font-body">
+                            <li class="flex items-start">
+                                <span class="text-primary font-bold mr-3">I1:</span>
+                                <span><strong>Cooking and Baking Habits </strong> How frequent, self-assessed cooking level, and difficulties
+                            they may have encountered during the cooking or baking process.</span>
+                            </li>
+                            <li class="flex items-start">
+                                <span class="text-primary font-bold mr-3">I2:</span>
+                                <span><strong>AR Awareness </strong> Have you heard of augmented reality technology? How do you describe
+                            it? If the answer is never heard, the researcher will show them a video and explanation to ensure they know the concept of AR.</span>
+                            </li>
+
+                            <li class="flex items-start">
+                                <span class="text-primary font-bold mr-3">I3:</span>
+                                <span><strong>Functional Requirements </strong> What helpful information would you like AR glasses to
+                            provide when cooking or baking?</span>
+                            </li>
+
+                            <li class="flex items-start">
+                                <span class="text-primary font-bold mr-3">I4:</span>
+                                <span><strong>Display Preferences </strong> Where do you think the AR information should be displayed to
+                            help you the most without disturbing you?</span>
+                            </li>
+
+                            <li class="flex items-start">
+                                <span class="text-primary font-bold mr-3">I5:</span>
+                                <span><strong>Recipe Assistance </strong> What are your expected AR glasses to assist in providing recipe
+                            tips? What are your preferences for different types of guidance, and why?</span>
+
+                            </li>
+
+                            <li class="flex items-start">
+                                <span class="text-primary font-bold mr-3">I6:</span>
+                                <span><strong>Workflow Optimization </strong>When working in the kitchen, which process best uses AR
+                            technology?</span>
+                            </li>
+
+                            <li class="flex items-start">
+                                <span class="text-primary font-bold mr-3">I7:</span>
+                                <span><strong>Concerns and Suggestions </strong>What are your concerns about using AR glasses? Give
+                            some suggestions about how to improve.</span>
+                            </li>
+                        </ol>
+
+
+                    </section>
+
+
+<!--                    <section x-data="{-->
+<!--    open: false,-->
+<!--    activeIndex: null,-->
+<!--    images: [-->
+<!--        'Extraction1.jpg',-->
+<!--        'Extraction2.jpg',-->
+<!--        'Extraction3.jpg',-->
+<!--        'Extraction4.jpg',-->
+<!--        'Extraction5.jpg',-->
+<!--        'Extraction6.jpg',-->
+<!--        'Extraction7.jpg',-->
+<!--        'Extraction8.jpg'-->
+<!--    ],-->
+<!--    nextImage() {-->
+<!--        this.activeIndex = (this.activeIndex + 1) % this.images.length;-->
+<!--    },-->
+<!--    prevImage() {-->
+<!--        this.activeIndex = (this.activeIndex - 1 + this.images.length) % this.images.length;-->
+<!--    }-->
+<!--}" >-->
+<!--                        <h3 class="text-2xl font-display font-bold mb-6 text-secondary">Affinity Diagram</h3>-->
+<!--                        <div>-->
+<!--                            <strong>Extracting Information</strong></div>-->
+<!--                        <div class="bg-background-light dark:bg-background-dark p-4 rounded-lg shadow-lg border-2 border-subtle-light dark:border-subtle-dark">-->
+
+<!--                            <div class="grid grid-cols-3 gap-3">-->
+<!--                                <template x-for="(image, index) in images" :key="index">-->
+<!--                                    <img @click="activeIndex = index; open = true"-->
+<!--                                         :src="image"-->
+<!--                                         class="w-full h-24 object-cover rounded-md cursor-pointer border-2 border-subtle-light dark:border-subtle-dark hover:border-secondary transition"/>-->
+<!--                                </template>-->
+<!--                            </div>-->
+<!--                        </div>-->
+
+<!--                        <div x-show="open"-->
+<!--                             @keydown.escape.window="open = false"-->
+<!--                             @keydown.arrow-right.prevent.window="if (open) nextImage()"-->
+<!--                             @keydown.arrow-left.prevent.window="if (open) prevImage()"-->
+<!--                             class="fixed inset-0 z-50 flex items-center justify-center bg-black/80 backdrop-blur-sm"-->
+<!--                             style="display: none;" x-cloak>-->
+
+<!--                            <div @click.away="open = false" class="relative max-w-5xl max-h-full mx-4">-->
+<!--                                <img :src="images[activeIndex]" alt="Affinity Diagram" class="w-full h-full object-contain rounded-lg"/>-->
+
+<!--                                <button @click="open = false" class="absolute -top-2 -right-2 sm:top-2 sm:right-2 text-white bg-secondary/50 hover:bg-secondary rounded-full p-2">-->
+<!--                                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M6 18L18 6M6 6l12 12" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path></svg>-->
+<!--                                </button>-->
+
+<!--                                <button @click="prevImage()" class="absolute left-0 sm:left-2 top-1/2 -translate-y-1/2 text-white bg-black/30 hover:bg-black/50 rounded-full p-2 transition">-->
+<!--                                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path></svg>-->
+<!--                                </button>-->
+<!--                                <button @click="nextImage()" class="absolute right-0 sm:right-2 top-1/2 -translate-y-1/2 text-white bg-black/30 hover:bg-black/50 rounded-full p-2 transition">-->
+<!--                                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path></svg>-->
+<!--                                </button>-->
+<!--                            </div>-->
+<!--                        </div>-->
+
+<!--<div>Stastics for the findings</div>-->
+<!--                            <div class="bg-background-light dark:bg-background-dark p-4 rounded-lg shadow-lg border-2 border-subtle-light dark:border-subtle-dark">-->
+
+<!--                            <img class="w-full h-100 object-cover rounded-md border-2 border-subtle-light dark:border-subtle-dark" src="stastics%20for%20findings.jpg"/>-->
+<!--                        </div>-->
+
+<!--                    </section>-->
+
+
+                    <section x-data="{
+    open: false,
+    activeIndex: null,
+    modalImage: '',
+    images: [
+        'Extraction1.jpg','Extraction2.jpg','Extraction3.jpg','Extraction4.jpg',
+        'Extraction5.jpg','Extraction6.jpg','Extraction7.jpg','Extraction8.jpg'
+    ],
+    displayGalleryImage(index) {
+        this.activeIndex = index;
+        this.modalImage = this.images[index];
+        this.open = true;
+    },
+    displaySingleImage(url) {
+        this.activeIndex = null; // 清空索引，因为这不是图集的一部分
+        this.modalImage = url;
+        this.open = true;
+    },
+    nextImage() {
+        if (this.activeIndex === null) return;
+        this.activeIndex = (this.activeIndex + 1) % this.images.length;
+        this.modalImage = this.images[this.activeIndex];
+    },
+    prevImage() {
+        if (this.activeIndex === null) return;
+        this.activeIndex = (this.activeIndex - 1 + this.images.length) % this.images.length;
+        this.modalImage = this.images[this.activeIndex];
+    }
+}">
+                        <h3 class="text-2xl font-display font-bold mb-6 text-secondary">Affinity Diagram</h3>
+
+                        <span>
+                            <div class="p-4"><strong>Extracting Information</strong></div>
+
+                        </span>
+                        <div class="bg-background-light dark:bg-background-dark p-4 rounded-lg shadow-lg border-2 border-subtle-light dark:border-subtle-dark">
+                            <div class="grid grid-cols-3 gap-3">
+                                <template x-for="(image, index) in images" :key="index">
+                                    <img @click="displayGalleryImage(index)"
+                                         :src="image"
+                                         class="w-full h-24 object-cover rounded-md cursor-pointer border-2 border-subtle-light dark:border-subtle-dark hover:border-secondary transition"/>
+                                </template>
+                            </div>
+                        </div>
+
+                        <div x-show="open"
+                             @keydown.escape.window="open = false"
+                             @keydown.arrow-right.prevent.window="if (open) nextImage()"
+                             @keydown.arrow-left.prevent.window="if (open) prevImage()"
+                             class="fixed inset-0 z-50 flex items-center justify-center bg-black/80 backdrop-blur-sm"
+                             style="display: none;" x-cloak>
+                            <div @click.away="open = false" class="relative max-w-5xl max-h-full mx-4">
+                                <img :src="modalImage" alt="Enlarged view" class="w-full h-full object-contain rounded-lg"/>
+
+                                <button @click="open = false" class="absolute -top-2 -right-2 sm:top-2 sm:right-2 text-white bg-secondary/50 hover:bg-secondary rounded-full p-2">
+                                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M6 18L18 6M6 6l12 12" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path></svg>
+                                </button>
+
+                                <template x-if="activeIndex !== null">
+                                    <div>
+                                        <button @click="prevImage()" class="absolute left-0 sm:left-2 top-1/2 -translate-y-1/2 text-white bg-black/30 hover:bg-black/50 rounded-full p-2 transition">
+                                            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path></svg>
+                                        </button>
+                                        <button @click="nextImage()" class="absolute right-0 sm:right-2 top-1/2 -translate-y-1/2 text-white bg-black/30 hover:bg-black/50 rounded-full p-2 transition">
+                                            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path></svg>
+                                        </button>
+                                    </div>
+                                </template>
+                            </div>
+                        </div>
+
+
+                        <span>
+                            <div class="p-4"><strong>Stastics for the findings</strong></div>
+
+                        </span>
+                        <div class="bg-background-light dark:bg-background-dark p-4 rounded-lg shadow-lg border-2 border-subtle-light dark:border-subtle-dark">
+                            <img @click="displaySingleImage('stastics%20for%20findings.jpg')"
+                                 class="w-full h-100 object-cover rounded-md border-2 border-subtle-light dark:border-subtle-dark cursor-pointer"
+                                 src="stastics%20for%20findings.jpg"/>
+                        </div>
+                    </section>
+
+                    <section>
+                        <h3 class="text-2xl font-display font-bold mb-4 text-secondary">Key Findings</h3>
+                        <p class="text-lg leading-relaxed text-text-light/90 dark:text-text-dark/90 mb-6 font-body">
+                            Through the analysis of interview data, we have identified the following core insights, which provide an important basis for the subsequent design directions:
+                        </p>
+                        <ol class="list-none space-y-4 text-lg leading-relaxed text-text-light/90 dark:text-text-dark/90 font-body">
+                            <li class="flex items-start"><span
+                                    class="text-primary font-bold mr-3"> • </span><span><strong>Time management is the primary pain point:</strong> Most respondents consider managing time during cooking to be a huge challenge, which directly affects the success of cooking and their experience.</span>
+                            </li>
+                            <li class="flex items-start"><span
+                                    class="text-primary font-bold mr-3"> • </span><span><strong>Dynamic rather than fixed information is needed: </strong>Users prefer a dynamic and adjustable way of displaying AR information over a fixed interface. For example, they hope that AR information can be placed anywhere they need, just like "sticky notes".</span>
+                            </li>
+                            <li class="flex items-start"><span
+                                    class="text-primary font-bold mr-3"> • </span><span><strong>Video is the preferred form of guidance: </strong> When obtaining recipe guidance, video is regarded as the most intuitive and effective form. Users say that videos can provide a more dynamic and immersive cooking experience.</span>
+                            </li>
+                            <li class="flex items-start"><span
+                                    class="text-primary font-bold mr-3"> • </span><span><strong>Visual Design:</strong> Created a clean, modern design system aligned with the brand's identity, infused with Tang elements.</span>
+                            </li>
+                            <li class="flex items-start"><span
+                                    class="text-primary font-bold mr-3"> • </span><span><strong>Concerns and expectations about AR coexist: </strong> Users express concerns about privacy protection and human comfort of AR technology in the kitchen, but at the same time, they are full of expectations for its potential to help manage the cooking process and provide more personalized guidance.</span>
+                            </li>
+                        </ol>
+                    </section>
+
+
+                    <section>
+                        <h3 class="text-2xl font-display font-bold mb-4 text-secondary">Design Concept:</h3>
+                        <p class="text-lg leading-relaxed text-text-light/90 dark:text-text-dark/90 mb-6 font-body">
+
+                            Design Concept: Based on the above findings, we proposed and verified a core design concept: <strong>"Spatial Timer"</strong>.
+
+                            This concept aims to use AR technology to present timers and cooking information to users in a spatialized manner, helping them easily manage the time for multiple cooking tasks, thereby significantly reducing cognitive load and improving cooking efficiency. The proposal of this concept effectively transforms research findings into implementable design solutions.
+                        </p>
+
+                    </section>
+                    <section>
+                        <h3 class="text-2xl font-display font-bold mb-4 text-secondary">Conclusion & Next Steps </h3>
+                        <p class="text-lg leading-relaxed text-text-light/90 dark:text-text-dark/90 mb-6 font-body">
+                            This study conducts interviews to assess how individuals perceive the function of augmented
+                            reality technology in the kitchen and its application in cooking. After investigation, I discovered
+                            that <strong>“time”</strong> is a critical influencing factor at the core of several culinary problems. It also indirectly
+                            leads to cooking challenges, such as poor time management, which leads to heat control mistakes;
+                            preparing ingredients takes too much time, which leads to boredom, etc. Furthermore, time
+                            management is the most often reported functional interest. Hence, effective allocation
+                            and time management in the cooking scenario provides a significant systemic challenge. It has an
+                            impact on the entire cooking process. This discovery enabled the project to present the <strong>“spatial
+                            timer” </strong> concept, which shaped the following evaluation tasks(study2 and study3). Meanwhile, the proposal of this
+                            concept has shifted the focus of research. The following studies will evaluate the effect of the
+                            “spatial timer” in improving cooking efficiency and reducing cognition based on AR technology’s
+                            spatial perception to provide users with a pleasant cooking experience.
+                        </p>
+<!--                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">-->
+<!--                            <div class="bg-background-light dark:bg-background-dark border-l-4 border-accent p-6 rounded-lg shadow-md">-->
+<!--                                <p class="text-3xl font-bold text-accent font-display">20%</p>-->
+<!--                                <p class="mt-1 text-base font-medium font-body">Increase in user engagement</p>-->
+<!--                            </div>-->
+<!--                            <div class="bg-background-light dark:bg-background-dark border-l-4 border-success p-6 rounded-lg shadow-md">-->
+<!--                                <p class="text-3xl font-bold text-success font-display">15%</p>-->
+<!--                                <p class="mt-1 text-base font-medium font-body">Reduction in task completion time</p>-->
+<!--                            </div>-->
+<!--                            <div class="bg-background-light dark:bg-background-dark border-l-4 border-secondary p-6 rounded-lg sm:col-span-2 shadow-md">-->
+<!--                                <p class="text-3xl font-bold text-secondary font-display">4.5<span-->
+<!--                                        class="text-2xl">/5</span></p>-->
+<!--                                <p class="mt-1 text-base font-medium font-body">Average App Store Rating (from 3.8)</p>-->
+<!--                            </div>-->
+<!--                        </div>-->
+                    </section>
+                </div>
+            </div>
+        </div>
+    </main>
+    <footer class="bg-background-light/80 dark:bg-background-dark/80 border-t border-subtle-light dark:border-subtle-dark mt-auto backdrop-blur-sm">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8 py-6 text-center text-sm text-text-light/60 dark:text-text-dark/60">
+            <p>© 2025 Design Portfolio. All Rights Reserved.</p>
+        </div>
+    </footer>
+</div>
+
+</body>
+</html>

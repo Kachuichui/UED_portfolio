@@ -1,0 +1,772 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8"/>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+    <title>Project one</title>
+    <link href="https://fonts.googleapis.com" rel="preconnect"/>
+    <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&amp;family=Noto+Sans+SC:wght@400;500;700&amp;display=swap"
+          rel="stylesheet"/>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <!--    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>-->
+    <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+    <style type="text/tailwindcss">
+        @layer theme {
+            :root {
+                --color-primary: #436C85;
+                --color-secondary: #B73F42;
+                --color-accent: #DE9960;
+                --color-success: #82B29B;
+                --color-background-light: #EEE6DB;
+                --color-background-dark: #2C2823;
+                --color-text-light: #1F1B17;
+                --color-text-dark: #EAE3D9;
+                --color-subtle-light: #DCD2C3;
+                --color-subtle-dark: #423C35;
+            }
+        }
+    </style>
+    <script>
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        primary: "var(--color-primary)",
+                        secondary: "var(--color-secondary)",
+                        accent: "var(--color-accent)",
+                        success: "var(--color-success)",
+                        "background-light": "var(--color-background-light)",
+                        "background-dark": "var(--color-background-dark)",
+                        "text-light": "var(--color-text-light)",
+                        "text-dark": "var(--color-text-dark)",
+                        "subtle-light": "var(--color-subtle-light)",
+                        "subtle-dark": "var(--color-subtle-dark)",
+                    },
+                    fontFamily: {
+                        display: ["Inter", "sans-serif"],
+                        // display: ["Playfair Display", "serif"],
+                        body: ["Noto Sans SC", "serif"],
+                        // body: ["Noto Sans SC", "sans-serif"],
+                    },
+                    borderRadius: {
+                        DEFAULT: "0.5rem",
+                        lg: "0.75rem",
+                        xl: "1rem",
+                        full: "9999px",
+                    },
+                    backgroundImage: {
+                        'tang-pattern': "url(\"data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23B73F42' fill-opacity='0.1'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E\")",
+                    }
+                },
+            },
+        };
+    </script>
+</head>
+
+
+<body class="bg-background-light dark:bg-background-dark font-body text-text-light dark:text-text-dark bg-tang-pattern">
+<div class="flex flex-col min-h-screen bg-background-light/95 dark:bg-background-dark/95">
+    <header class="sticky top-0 z-10 bg-background-light/80 dark:bg-background-dark/80 backdrop-blur-sm border-b border-subtle-light dark:border-subtle-dark">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-16">
+
+                <div class="flex items-center gap-3">
+                    <svg class="h-8 w-8 text-secondary" fill="currentColor" viewBox="0 0 24 24"
+                         xmlns="http://www.w3.org/2000/svg">
+                        <path d="M12 2L1 6.5V17.5L12 22L23 17.5V6.5L12 2ZM11 12.44L4 8.5V16.34L11 20.24V12.44ZM13 12.44V20.24L20 16.34V8.5L13 12.44ZM12 4.1L18.93 7.5L12 10.9L5.07 7.5L12 4.1Z"></path>
+                    </svg>
+                    <h1 onclick="window.location.href='home_screen.html'"
+                        class="text-2xl font-bold tracking-tight font-serif-sc text-primary cursor-pointer">Xinuo
+                        Zhou</h1>
+                </div>
+
+
+                <nav class="hidden md:flex items-center space-x-8">
+                    <a onclick="window.location.href='about_me.html'"
+                       class="text-text-secondary hover:text-primary transition-colors font-medium cursor-pointer">About
+                        me</a>
+                    <a onclick="window.location.href='project_showcase.html'"
+                       class="text-secondary font-semibold cursor-pointer">Projects</a>
+                    <a onclick="window.location.href='contact_me.html'"
+                       class="text-text-secondary hover:text-primary transition-colors font-medium cursor-pointer">Contact</a>
+                </nav>
+
+                <button popovertarget="mobile-menu"
+                        class="md:hidden p-2 rounded-md text-text-secondary hover:text-primary hover:bg-primary/10 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-primary">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"
+                         xmlns="http://www.w3.org/2000/svg">
+                        <path d="M4 6h16M4 12h16M4 18h16" stroke-linecap="round" stroke-linejoin="round"
+                              stroke-width="2"></path>
+                    </svg>
+                </button>
+
+                <div id="mobile-menu" popover
+                     class="md:hidden m-0 mt-2 p-4 bg-background-light border border-base rounded-lg shadow-lg w-48">
+                    <nav class="flex flex-col gap-4">
+                        <a onclick="window.location.href='about_me.html'"
+                           class="text-text-secondary hover:text-primary transition-colors font-medium cursor-pointer">About
+                            me</a>
+                        <a onclick="window.location.href='project_showcase.html'"
+                           class="text-secondary font-semibold cursor-pointer">Projects</a>
+                        <a onclick="window.location.href='contact_me.html'"
+                           class="text-text-secondary hover:text-primary transition-colors font-medium cursor-pointer">Contact</a>
+                    </nav>
+                </div>
+
+            </div>
+        </div>
+    </header>
+
+
+    <main class="container mx-auto px-4 sm:px-6 lg:px-8 py-12 md:py-16">
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-12">
+            <div class="md:col-span-1">
+                <div class="sticky top-24">
+                    <h3 class="text-lg font-display font-bold text-primary mb-4 border-b-2 border-accent pb-2">
+                        Project Details</h3>
+                    <dl class="space-y-4 font-body">
+                        <div>
+                            <dt class="text-sm font-medium text-text-light/70 dark:text-text-dark/70">Role</dt>
+                            <dd class="mt-1 text-base font-semibold">Lead UX Designer</dd>
+                        </div>
+                        <div>
+                            <dt class="text-sm font-medium text-text-light/70 dark:text-text-dark/70">Duration
+                            </dt>
+                            <dd class="mt-1 text-base font-semibold">12 Months</dd>
+                        </div>
+                        <div>
+                            <dt class="text-sm font-medium text-text-light/70 dark:text-text-dark/70">Tools</dt>
+                            <dd class="mt-1 text-base font-semibold">Figma, Miro, Unity</dd>
+                        </div>
+                    </dl>
+                </div>
+            </div>
+            <div class="md:col-span-2 space-y-12">
+                <section>
+
+
+                    <h3 class="text-2xl font-display font-bold mb-4 text-secondary">Spatial Timer Prototype</h3>
+                    <p class="text-lg leading-relaxed text-text-light/90 dark:text-text-dark/90 font-body">
+                        Following the interviews in the previous Study (Study 1), I learned about people’s thoughts on
+                        the kitchen AR technology. They struggled with "time" in various culinary tasks. A unique
+                        "spatial
+                        timer," Inspired by kitchen time management issues, it was created. This page will describe the
+                        "spatial timer," its prototype, and the experimental design to evaluate its effectiveness using
+                        multiple methods.
+                    </p>
+                </section>
+
+                <section>
+                    <h3 class="text-2xl font-display font-bold mb-4 text-secondary">Design Inspiration</h3>
+
+                    <div class="space-y-4 text-lg leading-relaxed text-text-light/90 dark:text-text-dark/90 font-body">
+                        <p>
+                            Traditional timers are often limited to a single device and a fixed location. This
+                            makes managing multiple tasks in a dynamic environment, like a kitchen, difficult
+                            and inefficient.
+                        </p>
+                        <p>
+                            To overcome these limitations, I designed a <strong>Spatial Timer</strong> using
+                            Augmented Reality (AR). This transforms the concept of a timer from a 2D display
+                            into a 3D virtual object you can place anywhere in your physical space. Key features
+                            include:
+                        </p>
+                        <ul class="list-disc list-inside pl-4 space-y-2">
+                            <li>
+                                <strong>Spatial Mapping:</strong> Linking time information directly to specific
+                                tasks or locations in the real world.
+                            </li>
+                            <li>
+                                <strong>Spatial Interaction:</strong> Using natural hand gestures to control
+                                timers without touching a device.
+                            </li>
+                            <li>
+                                <strong>Multi-Timer Collaboration:</strong> Effortlessly creating and managing
+                                multiple timers at once to handle complex, parallel tasks.
+                            </li>
+                        </ul>
+                        <p>
+                            By bringing time management into our physical space, the Spatial Timer aims to make
+                            the process more intuitive, contextual, and efficient.
+                        </p>
+                    </div>
+                </section>
+
+
+                <section x-data="{
+                                open: false,
+                                activeIndex: 0, //
+                                modalImage: '',
+
+                                images: [
+                                    'prototype1.png',
+                                    'prototype2.png',
+                                    'prototype3.png',
+
+                            <!--        'https://via.placeholder.com/800x600/FFD700/FFFFFF?text=Case+Study+Image+1',-->
+                            <!--        'https://via.placeholder.com/800x600/FFA07A/FFFFFF?text=Case+Study+Image+2',-->
+                            <!--        'https://via.placeholder.com/800x600/98FB98/FFFFFF?text=Case+Study+Image+3',-->
+                            <!--        'https://via.placeholder.com/800x600/ADD8E6/FFFFFF?text=Case+Study+Image+4'-->
+                                ],
+                                init() {
+
+                                    this.modalImage = this.images[this.activeIndex];
+                                },
+                                showImage(index) {
+                                    this.activeIndex = index;
+                                    this.modalImage = this.images[index];
+                                    this.open = true;
+                                },
+                                nextImage() {
+                                    this.activeIndex = (this.activeIndex + 1) % this.images.length;
+                                    this.modalImage = this.images[this.activeIndex];
+                                },
+                                prevImage() {
+                                    this.activeIndex = (this.activeIndex - 1 + this.images.length) % this.images.length;
+                                    this.modalImage = this.images[this.activeIndex];
+                                }
+                            }">
+                    <h3 class="text-2xl font-display font-bold mb-4 text-secondary">Figma version</h3>
+                    <div class="relative w-full max-w-md mx-auto mt-10 p-4 bg-white shadow-xl rounded-xl border border-gray-100">
+                        <img :src="images[activeIndex]"
+                             @click="showImage(activeIndex)"
+                             alt="Exploring AR Technology in Kitchen"
+                             class="w-full rounded-lg cursor-pointer transition-transform duration-300 hover:scale-[1.01]"/>
+
+                        <div class="absolute bottom-4 left-1/2 -translate-x-1/2 flex space-x-2">
+                            <template x-for="(img, idx) in images" :key="idx">
+                                            <span @click="showImage(idx)"
+                                                  class="w-3 h-3 rounded-full bg-gray-400 cursor-pointer"
+                                                  :class="{ 'bg-primary': activeIndex === idx }"></span>
+                            </template>
+                        </div>
+
+                        <button @click="prevImage()"
+                                class="absolute left-2 top-1/2 -translate-y-1/2 text-gray-700 bg-white/70 hover:bg-white rounded-full p-2 shadow-md transition-colors">
+                            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                      d="M15 19l-7-7 7-7"></path>
+                            </svg>
+                        </button>
+                        <button @click="nextImage()"
+                                class="absolute right-2 top-1/2 -translate-y-1/2 text-gray-700 bg-white/70 hover:bg-white rounded-full p-2 shadow-md transition-colors">
+                            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                      d="M9 5l7 7-7 7"></path>
+                            </svg>
+                        </button>
+                    </div>
+
+                    <div x-show="open"
+                         @keydown.escape.window="open = false"
+                         @keydown.arrow-right.prevent.window="nextImage()"
+                         @keydown.arrow-left.prevent.window="prevImage()"
+                         class="fixed inset-0 z-[9999] flex items-center justify-center bg-black/80 backdrop-blur-sm"
+                         style="display: none;" x-cloak>
+
+                        <div @click.away="open = false"
+                             class="relative max-w-[calc(100vw/2)] max-h-[calc(100vh/2)] mx-4">
+                            <img :src="modalImage" alt="Enlarged view"
+                                 class="w-full h-full object-contain rounded-lg shadow-2xl"/>
+
+                            <button @click="open = false"
+                                    class="absolute -top-4 -right-4 text-white bg-secondary/70 hover:bg-secondary rounded-full p-2 shadow-lg z-10">
+                                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path d="M6 18L18 6M6 6l12 12" stroke-linecap="round" stroke-linejoin="round"
+                                          stroke-width="2"></path>
+                                </svg>
+                            </button>
+
+                            <button @click="prevImage()"
+                                    class="absolute left-4 top-1/2 -translate-y-1/2 text-white bg-black/40 hover:bg-black/60 rounded-full p-3 shadow-lg transition-colors">
+                                <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                          d="M15 19l-7-7 7-7"></path>
+                                </svg>
+                            </button>
+                            <button @click="nextImage()"
+                                    class="absolute right-4 top-1/2 -translate-y-1/2 text-white bg-black/40 hover:bg-black/60 rounded-full p-3 shadow-lg transition-colors">
+                                <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                          d="M9 5l7 7-7 7"></path>
+                                </svg>
+                            </button>
+                        </div>
+
+                    </div>
+                    <!--                                                <div class="relative w-full mx-auto">-->
+                    <div class="text-2xl font-display font-bold mb-4 text-secondary"></div>
+
+                    <p class="text-lg leading-relaxed text-text-light/90 dark:text-text-dark/90 mb-6 font-body">
+                        Spatial Timer Panel Function Time management is Spatial Timer's primary purpose. I
+                        concentrated on timer basics and included the following features throughout the design.
+
+                    </p>
+                    <ol class="list-none space-y-4 text-lg leading-relaxed text-text-light/90 dark:text-text-dark/90 font-body">
+                        <li class="flex items-start"><span
+                                class="text-light font-bold mr-3"> • </span><span><strong>Time Input: </strong> A digital keyboard allows minute-level time input. The numeric keypad’s
+                                                                                    nine panels make numbers easy to find and input.</span>
+                        </li>
+                        <li class="flex items-start"><span
+                                class="text-light font-bold mr-3"> • </span><span><strong>Clear Buttons: </strong> Users can correct entry errors or alter timer length by clicking Clear.</span>
+                        </li>
+                        <li class="flex items-start"><span
+                                class="text-light font-bold mr-3"> • </span><span><strong>Start/Restart buttons:</strong>Tap Start to start the countdown and jump to the countdown
+                                                                                    screen after setting the time. Restarting the countdown starts from scratch. </span>
+                        </li>
+                        <li class="flex items-start"><span
+                                class="text-light font-bold mr-3"> • </span><span><strong>Pause/Resume buttons:</strong>Clicking the stop and resume buttons pauses and resumes the
+                                                                                    process.</span>
+                        </li>
+                        <li class="flex items-start"><span
+                                class="text-light font-bold mr-3"> • </span><span><strong>Toggle buttons:</strong> Users may choose between round and slider countdown panels.</span>
+                        </li>
+                        <li class="flex items-start"><span
+                                class="text-light font-bold mr-3"> • </span><span><strong>Delete buttons:</strong> Remove timers when no longer required to improve space layout.</span>
+                        </li>
+
+
+                    </ol>
+
+                </section>
+
+                <section x-data="{
+                                open: false,
+                                activeIndex: 0, //
+                                modalImage: '',
+
+                                images: [
+                                    'Canvas1.png',
+                                    'Canvas2.png',
+                                    'Canvas3.png',
+
+                                ],
+                                init() {
+
+                                    this.modalImage = this.images[this.activeIndex];
+                                },
+                                showImage(index) {
+                                    this.activeIndex = index;
+                                    this.modalImage = this.images[index];
+                                    this.open = true;
+                                },
+                                nextImage() {
+                                    this.activeIndex = (this.activeIndex + 1) % this.images.length;
+                                    this.modalImage = this.images[this.activeIndex];
+                                },
+                                prevImage() {
+                                    this.activeIndex = (this.activeIndex - 1 + this.images.length) % this.images.length;
+                                    this.modalImage = this.images[this.activeIndex];
+                                }
+                            }">
+                    <h3 class="text-2xl font-display font-bold mb-4 text-secondary">Unity 2D version</h3>
+                    <div class="relative w-full max-w-md mx-auto mt-10 p-4 bg-white shadow-xl rounded-xl border border-gray-100">
+                        <img :src="images[activeIndex]"
+                             @click="showImage(activeIndex)"
+                             alt="Exploring AR Technology in Kitchen"
+                             class="w-full rounded-lg cursor-pointer transition-transform duration-300 hover:scale-[1.01]"/>
+
+                        <div class="absolute bottom-4 left-1/2 -translate-x-1/2 flex space-x-2">
+                            <template x-for="(img, idx) in images" :key="idx">
+                                            <span @click="showImage(idx)"
+                                                  class="w-3 h-3 rounded-full bg-gray-400 cursor-pointer"
+                                                  :class="{ 'bg-primary': activeIndex === idx }"></span>
+                            </template>
+                        </div>
+
+                        <button @click="prevImage()"
+                                class="absolute left-2 top-1/2 -translate-y-1/2 text-gray-700 bg-white/70 hover:bg-white rounded-full p-2 shadow-md transition-colors">
+                            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                      d="M15 19l-7-7 7-7"></path>
+                            </svg>
+                        </button>
+                        <button @click="nextImage()"
+                                class="absolute right-2 top-1/2 -translate-y-1/2 text-gray-700 bg-white/70 hover:bg-white rounded-full p-2 shadow-md transition-colors">
+                            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                      d="M9 5l7 7-7 7"></path>
+                            </svg>
+                        </button>
+                    </div>
+
+                    <div x-show="open"
+                         @keydown.escape.window="open = false"
+                         @keydown.arrow-right.prevent.window="nextImage()"
+                         @keydown.arrow-left.prevent.window="prevImage()"
+                         class="fixed inset-0 z-[9999] flex items-center justify-center bg-black/80 backdrop-blur-sm"
+                         style="display: none;" x-cloak>
+
+                        <div @click.away="open = false"
+                             class="relative max-w-[calc(100vw/2)] max-h-[calc(100vh/2)] mx-4">
+                            <img :src="modalImage" alt="Enlarged view"
+                                 class="w-full h-full object-contain rounded-lg shadow-2xl"/>
+
+                            <button @click="open = false"
+                                    class="absolute -top-4 -right-4 text-white bg-secondary/70 hover:bg-secondary rounded-full p-2 shadow-lg z-10">
+                                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path d="M6 18L18 6M6 6l12 12" stroke-linecap="round" stroke-linejoin="round"
+                                          stroke-width="2"></path>
+                                </svg>
+                            </button>
+
+                            <button @click="prevImage()"
+                                    class="absolute left-4 top-1/2 -translate-y-1/2 text-white bg-black/40 hover:bg-black/60 rounded-full p-3 shadow-lg transition-colors">
+                                <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                          d="M15 19l-7-7 7-7"></path>
+                                </svg>
+                            </button>
+                            <button @click="nextImage()"
+                                    class="absolute right-4 top-1/2 -translate-y-1/2 text-white bg-black/40 hover:bg-black/60 rounded-full p-3 shadow-lg transition-colors">
+                                <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                          d="M9 5l7 7-7 7"></path>
+                                </svg>
+                            </button>
+                        </div>
+
+                    </div>
+
+
+                </section>
+
+
+                <section x-data="{
+                                open: false,
+                                activeIndex: 0, //
+                                modalImage: '',
+
+                                images: [
+                                    'AR1.jpg',
+                                    'AR2.jpg',
+                                    'AR3.jpg',
+                                    'AR4.jpg',
+
+                                ],
+                                init() {
+
+                                    this.modalImage = this.images[this.activeIndex];
+                                },
+                                showImage(index) {
+                                    this.activeIndex = index;
+                                    this.modalImage = this.images[index];
+                                    this.open = true;
+                                },
+                                nextImage() {
+                                    this.activeIndex = (this.activeIndex + 1) % this.images.length;
+                                    this.modalImage = this.images[this.activeIndex];
+                                },
+                                prevImage() {
+                                    this.activeIndex = (this.activeIndex - 1 + this.images.length) % this.images.length;
+                                    this.modalImage = this.images[this.activeIndex];
+                                }
+                            }">
+                    <h3 class="text-2xl font-display font-bold mb-4 text-secondary">Unity AR version</h3>
+                    <div class="relative w-full max-w-md mx-auto mt-10 p-4 bg-white shadow-xl rounded-xl border border-gray-100">
+                        <img :src="images[activeIndex]"
+                             @click="showImage(activeIndex)"
+                             alt="Exploring AR Technology in Kitchen"
+                             class="w-full rounded-lg cursor-pointer transition-transform duration-300 hover:scale-[1.01]"/>
+
+                        <div class="absolute bottom-4 left-1/2 -translate-x-1/2 flex space-x-2">
+                            <template x-for="(img, idx) in images" :key="idx">
+                                            <span @click="showImage(idx)"
+                                                  class="w-3 h-3 rounded-full bg-gray-400 cursor-pointer"
+                                                  :class="{ 'bg-primary': activeIndex === idx }"></span>
+                            </template>
+                        </div>
+
+                        <button @click="prevImage()"
+                                class="absolute left-2 top-1/2 -translate-y-1/2 text-gray-700 bg-white/70 hover:bg-white rounded-full p-2 shadow-md transition-colors">
+                            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                      d="M15 19l-7-7 7-7"></path>
+                            </svg>
+                        </button>
+                        <button @click="nextImage()"
+                                class="absolute right-2 top-1/2 -translate-y-1/2 text-gray-700 bg-white/70 hover:bg-white rounded-full p-2 shadow-md transition-colors">
+                            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                      d="M9 5l7 7-7 7"></path>
+                            </svg>
+                        </button>
+                    </div>
+
+                    <div x-show="open"
+                         @keydown.escape.window="open = false"
+                         @keydown.arrow-right.prevent.window="nextImage()"
+                         @keydown.arrow-left.prevent.window="prevImage()"
+                         class="fixed inset-0 z-[9999] flex items-center justify-center bg-black/80 backdrop-blur-sm"
+                         style="display: none;" x-cloak>
+
+                        <div @click.away="open = false"
+                             class="relative max-w-[calc(100vw/2)] max-h-[calc(100vh/2)] mx-4">
+                            <img :src="modalImage" alt="Enlarged view"
+                                 class="w-full h-full object-contain rounded-lg shadow-2xl"/>
+
+                            <button @click="open = false"
+                                    class="absolute -top-4 -right-4 text-white bg-secondary/70 hover:bg-secondary rounded-full p-2 shadow-lg z-10">
+                                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path d="M6 18L18 6M6 6l12 12" stroke-linecap="round" stroke-linejoin="round"
+                                          stroke-width="2"></path>
+                                </svg>
+                            </button>
+
+                            <button @click="prevImage()"
+                                    class="absolute left-4 top-1/2 -translate-y-1/2 text-white bg-black/40 hover:bg-black/60 rounded-full p-3 shadow-lg transition-colors">
+                                <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                          d="M15 19l-7-7 7-7"></path>
+                                </svg>
+                            </button>
+                            <button @click="nextImage()"
+                                    class="absolute right-4 top-1/2 -translate-y-1/2 text-white bg-black/40 hover:bg-black/60 rounded-full p-3 shadow-lg transition-colors">
+                                <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                          d="M9 5l7 7-7 7"></path>
+                                </svg>
+                            </button>
+                        </div>
+
+                    </div>
+                    <!--                                                <div class="relative w-full mx-auto">-->
+                    <div class="text-2xl font-display font-bold mb-4 text-secondary"></div>
+                    <p class="text-lg leading-relaxed text-text-light/90 dark:text-text-dark/90 mb-6 font-body">
+                        Interactive Function Spatial Timer's gesture-based time management is innovative. In a
+                        three-dimensional environment, motions make timer generation, manipulation, and management
+                        easier. We created these primary gesture interactions:
+                    </p>
+                    <ol class="list-none space-y-4 text-lg leading-relaxed text-text-light/90 dark:text-text-dark/90 font-body">
+                        <li class="flex items-start"><span
+                                class="text-light font-bold mr-3"> • </span><span><strong>Generate Timer: </strong> Our gesture was inspired by the British Sign Language "timer" Bsl (2013).
+                        Four fingers are bent to the same degree, but the thumb is bent somewhat differently. The user can generate a timer in the surrounding environment by performing this action.</span>
+                        </li>
+                        <li class="flex items-start"><span
+                                class="text-light font-bold mr-3"> • </span><span><strong>Shift: </strong> Grab and drag movements move the timer anywhere in the space.</span>
+                        </li>
+                        <li class="flex items-start"><span
+                                class="text-light font-bold mr-3"> • </span><span><strong>Zooming: </strong> Users may instantly reduce or enlarge the timer to fit various spaces using
+                        pinch and open actions.</span>
+                        </li>
+                        <li class="flex items-start"><span
+                                class="text-light font-bold mr-3"> • </span><span><strong>Rotation:</strong> To improve timer spatial orientation, the user may squeeze one of the anchor
+                        points to rotate the timer at any angle around its vertical (Y-axis) and horizontal (X-axis)
+                        axes.</span>
+                        </li>
+                        <li class="flex items-start"><span
+                                class="text-light font-bold mr-3"> • </span><span><strong>Time panel: </strong> Users may touch or poke the timer panel buttons to start, stop, reset, and
+                        swap timer forms.</span>
+                        </li>
+
+                    </ol>
+                </section>
+
+
+<!--                <section>-->
+<!--                    <h3 class="text-2xl font-display font-bold mb-4 text-secondary">Unity 2D Version</h3>-->
+<!--                    <p class="text-lg leading-relaxed text-text-light/90 dark:text-text-dark/90 mb-6 font-body">-->
+<!--                        The redesigned app features a streamlined interface with clear visual cues and intuitive-->
+<!--                        navigation. Key improvements include a simplified dashboard,-->
+<!--                        improved navigation, clear task flows, and an enhanced visual design inspired by Tang-->
+<!--                        Dynasty art.-->
+<!--                    </p>-->
+<!--                    <div class="grid grid-cols-2 gap-4">-->
+<!--                        <div class="col-span-2 rounded-lg overflow-hidden border-2 border-subtle-light dark:border-subtle-dark">-->
+<!--                            <img alt="App screenshot 1" class="w-full h-full object-cover"-->
+<!--                                 src="https://lh3.googleusercontent.com/aida-public/AB6AXuCFSFhM1SV1BaO_HZG4Dgw_tIsZht5MLlb1drHUgJe-pYxH3FWKhftVbcYdqkoJmMV9-AbTdaFFAJ4cpaOa8mP0em9sY3gR5pB0wor1XzXiY5Y38xfeDh73yHf7R1U3BJjXGDDeEWjhrBbOFkUl7tyVWY8ZM7ad6BtXLpwpCoFzqPHfXS4puhUtPdHehHZES8TuOoQd3FFpYFAFw77v9JtRaJPZVXG5y_dm5d0gIq_UBWxKtKU2gcNXXdQdrpH2c167ueyGZgJFTkE"/>-->
+<!--                        </div>-->
+<!--                        <div class="col-span-2 rounded-lg overflow-hidden border-2 border-subtle-light dark:border-subtle-dark">-->
+<!--                            <img alt="App screenshot 2" class="w-full h-full object-cover"-->
+<!--                                 src="https://lh3.googleusercontent.com/aida-public/AB6AXuC2jI9BfOpSS1DVJD0MVHTYesIH4OTKHDLvMK3CPQH-BYNPVmmerbtLRvRfYPy9uj3SNGweF-JId7Vp9gvMuDOfOEqCmGl9E7vBHnJ-g1rON7bjCZKNoHw_nwBCTQvAWCan1LwZi4L3EczgzoJ1SZLN42hsRq7RGkHkAAZs2vWifVuMt6DGiDIBhuRLPGjWncRZA5vlNFhQHtO390M0WwWEnAYywsWkXvK7acqRoIwsQDmDgnm__bOrUwVDu3cz5Rh-KubVbBCFeyY"/>-->
+<!--                        </div>-->
+<!--                    </div>-->
+<!--                </section>-->
+
+
+                <!-- Responsive Video Gallery (place this right after the image carousel of "Unity AR version") -->
+                <section
+                        x-data="{
+    vOpen:false,
+    vActive:0,
+    vModalSrc:'',
+    videos: [
+      // 后台替换为你自己的视频文件和封面
+      { src: 'generate-spatial-timer.mp4', type: 'video/mp4', poster: 'AR3.jpg', caption: 'Spatial Timer – gesture create', vtt:'' },
+      { src: 'interaction-with-spatial-timer.mp4', type: 'video/mp4', poster: 'AR2.jpg', caption: 'Spatial Timer – move & place', vtt:'' }
+    ],
+<!--      { src: 'assets/videos/ar-demo-3.mp4', type: 'video/mp4', poster: 'assets/videos/ar-demo-3.jpg', caption: 'Spatial Timer – resize & rotate', vtt: '' }-->
+
+    init(){ this.vModalSrc = this.videos[this.vActive].src; },
+    vShow(i){ this.vActive = i; this.vModalSrc = this.videos[i].src; this.vOpen = true; },
+    vNext(){ this.vActive = (this.vActive + 1) % this.videos.length; this.vModalSrc = this.videos[this.vActive].src; },
+    vPrev(){ this.vActive = (this.vActive - 1 + this.videos.length) % this.videos.length; this.vModalSrc = this.videos[this.vActive].src; }
+  }"
+                        class="mt-12"
+                >
+                    <h4 class="text-xl md:text-2xl font-display font-bold mb-4 text-secondary">AR Demo Video</h4>
+
+                    <!-- 主卡片播放器（响应式 16:9） -->
+                    <div class="relative w-full max-w-3xl mx-auto p-4 bg-white rounded-xl shadow-xl border border-gray-100">
+                        <div class="rounded-lg overflow-hidden aspect-video">
+                            <video
+                                    :src="videos[vActive].src"
+                                    :poster="videos[vActive].poster"
+                                    :key="videos[vActive].src"
+                                    class="w-full h-full"
+                                    controls
+                                    playsinline
+                                    preload="metadata"
+                            >
+                                <template x-if="videos[vActive].type === 'video/mp4'">
+                                    <source :src="videos[vActive].src" type="video/mp4">
+                                </template>
+                                <template x-if="videos[vActive].type === 'video/mp4'">
+                                    <source :src="videos[vActive].src" type="video/mp4">
+                                </template>
+                                <template x-if="videos[vActive].vtt">
+                                    <track kind="captions" :src="videos[vActive].vtt" srclang="en" label="English" default>
+                                </template>
+                                Your browser does not support HTML5 video.
+                            </video>
+                        </div>
+
+                        <!-- 标题/说明 -->
+                        <div class="mt-3 flex items-center justify-between gap-3">
+                            <p class="text-sm md:text-base font-medium text-text-light/80 dark:text-text-dark/80" x-text="videos[vActive].caption"></p>
+                            <div class="flex items-center gap-2">
+                                <button @click="vPrev()" class="px-3 py-1 rounded-md bg-background-light hover:bg-primary/10 text-primary font-medium transition">Prev</button>
+                                <button @click="vShow(vActive)" class="px-3 py-1 rounded-md bg-secondary text-white font-semibold shadow hover:opacity-95 transition">Fullscreen</button>
+                                <button @click="vNext()" class="px-3 py-1 rounded-md bg-background-light hover:bg-primary/10 text-primary font-medium transition">Next</button>
+                            </div>
+                        </div>
+
+                        <!-- 缩略条：可滚动、可点击 -->
+                        <div class="mt-4 flex gap-3 overflow-x-auto pb-1">
+                            <template x-for="(v, i) in videos" :key="i">
+                                <button
+                                        @click="vActive = i"
+                                        class="shrink-0 w-36 rounded-lg border-2"
+                                        :class="i===vActive ? 'border-primary' : 'border-subtle-light dark:border-subtle-dark hover:border-primary/50'"
+                                        aria-label="Select video"
+                                >
+                                    <div class="aspect-video w-full overflow-hidden rounded-md bg-black/5">
+                                        <img :src="v.poster" class="w-full h-full object-cover" :alt="v.caption">
+                                    </div>
+                                    <p class="px-2 py-1 text-xs text-left line-clamp-2" x-text="v.caption"></p>
+                                </button>
+                            </template>
+                        </div>
+                    </div>
+
+                    <!-- 全屏 Modal 播放器（与图片 modal 风格一致） -->
+                    <div
+                            x-show="vOpen"
+                            x-cloak
+                            @keydown.escape.window="vOpen=false"
+                            @keydown.arrow-right.prevent.window="vNext()"
+                            @keydown.arrow-left.prevent.window="vPrev()"
+                            class="fixed inset-0 z-[9999] flex items-center justify-center bg-black/80 backdrop-blur-sm"
+                            style="display:none;"
+                    >
+                        <div @click.away="vOpen=false" class="relative w-[min(90vw,1200px)]">
+                            <div class="rounded-lg overflow-hidden aspect-video bg-black">
+                                <video
+                                        :src="vModalSrc"
+                                        class="w-full h-full"
+                                        controls
+                                        autoplay
+                                        playsinline
+                                        preload="metadata"
+                                ></video>
+                            </div>
+
+                            <button @click="vOpen=false"
+                                    class="absolute -top-4 -right-4 text-white bg-secondary/70 hover:bg-secondary rounded-full p-2 shadow-lg z-10">
+                                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path d="M6 18L18 6M6 6l12 12" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
+                                </svg>
+                            </button>
+
+                            <button @click="vPrev()"
+                                    class="absolute left-4 top-1/2 -translate-y-1/2 text-white bg-black/40 hover:bg-black/60 rounded-full p-3 shadow-lg">
+                                <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path>
+                                </svg>
+                            </button>
+                            <button @click="vNext()"
+                                    class="absolute right-4 top-1/2 -translate-y-1/2 text-white bg-black/40 hover:bg-black/60 rounded-full p-3 shadow-lg">
+                                <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+                                </svg>
+                            </button>
+                        </div>
+                    </div>
+                </section>
+
+
+                <section>
+                    <h3 class="text-2xl font-display font-bold mb-4 text-secondary">Unity Scene version</h3>
+                    <p class="text-lg leading-relaxed text-text-light/90 dark:text-text-dark/90 mb-6 font-body">
+                        Our design process involved several key stages to ensure a user-centric solution.
+                    </p>
+                    <ol class="list-none space-y-4 text-lg leading-relaxed text-text-light/90 dark:text-text-dark/90 font-body">
+                        <li class="flex items-start"><span
+                                class="text-primary font-bold mr-3">壹.</span><span><strong>User Research:</strong> Conducted interviews and testing to identify pain points and understand user needs.</span>
+                        </li>
+                        <li class="flex items-start"><span
+                                class="text-primary font-bold mr-3">貳.</span><span><strong>Information Architecture:</strong> Restructured the app's IA for a more logical and intuitive flow.</span>
+                        </li>
+                        <li class="flex items-start"><span
+                                class="text-primary font-bold mr-3">叁.</span><span><strong>Wireframing &amp; Prototyping:</strong> Developed low and high-fidelity wireframes, leading to an interactive prototype.</span>
+                        </li>
+                        <li class="flex items-start"><span
+                                class="text-primary font-bold mr-3">肆.</span><span><strong>Visual Design:</strong> Created a clean, modern design system aligned with the brand's identity, infused with Tang elements.</span>
+                        </li>
+                        <li class="flex items-start"><span
+                                class="text-primary font-bold mr-3">伍.</span><span><strong>Usability Testing:</strong> Validated the new design through rigorous testing and iterated based on feedback.</span>
+                        </li>
+                    </ol>
+                </section>
+
+                <section>
+                    <h3 class="text-2xl font-display font-bold mb-4 text-secondary">Outcome</h3>
+                    <p class="text-lg leading-relaxed text-text-light/90 dark:text-text-dark/90 mb-6 font-body">
+                        The redesign yielded significant positive results, validating our user-centered
+                        approach.
+                    </p>
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                        <div class="bg-background-light dark:bg-background-dark border-l-4 border-accent p-6 rounded-lg shadow-md">
+                            <p class="text-3xl font-bold text-accent font-display">20%</p>
+                            <p class="mt-1 text-base font-medium font-body">Increase in user engagement</p>
+                        </div>
+                        <div class="bg-background-light dark:bg-background-dark border-l-4 border-success p-6 rounded-lg shadow-md">
+                            <p class="text-3xl font-bold text-success font-display">15%</p>
+                            <p class="mt-1 text-base font-medium font-body">Reduction in task completion
+                                time</p>
+                        </div>
+                        <div class="bg-background-light dark:bg-background-dark border-l-4 border-secondary p-6 rounded-lg sm:col-span-2 shadow-md">
+                            <p class="text-3xl font-bold text-secondary font-display">4.5<span
+                                    class="text-2xl">/5</span>
+                            </p>
+                            <p class="mt-1 text-base font-medium font-body">Average App Store Rating (from
+                                3.8)</p>
+                        </div>
+                    </div>
+                </section>
+            </div>
+        </div>
+
+
+    </main>
+    <footer class="bg-background-light/80 dark:bg-background-dark/80 border-t border-subtle-light dark:border-subtle-dark mt-auto backdrop-blur-sm">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8 py-6 text-center text-sm text-text-light/60 dark:text-text-dark/60">
+            <p>© 2025 Design Portfolio. All Rights Reserved.</p>
+        </div>
+    </footer>
+</div>
+
+</body>
+</html>

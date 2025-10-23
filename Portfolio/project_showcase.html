@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8"/>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+    <title>Design Portfolio</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link href="https://fonts.googleapis.com" rel="preconnect"/>
+    <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;900&amp;family=Noto+Serif+SC:wght@400;700&amp;display=swap" rel="stylesheet"/>
+<!--    <script>-->
+<!--        tailwind.config = {-->
+<!--            darkMode: "class",-->
+<!--            theme: {-->
+<!--                extend: {-->
+<!--                    colors: {-->
+<!--                        "primary": "#436C85",-->
+<!--                        "secondary": "#B73F42",-->
+<!--                        "accent": "#DE9960",-->
+<!--                        "neutral": "#82B29B",-->
+<!--                        "base": "#EEE6DB",-->
+<!--                        "text-primary": "#1a1a1a",-->
+<!--                        "text-secondary": "#4d4d4d",-->
+<!--                        "background": "#EEE6DB"-->
+<!--                            // "#fdfbf8"-->
+<!--                    },-->
+<!--                    fontFamily: {-->
+<!--                        "display": ["Inter", "sans-serif"],-->
+<!--                        "serif-sc": ['"Noto Serif SC"', 'serif'],-->
+<!--                    },-->
+<!--                    borderRadius: {-->
+<!--                        "DEFAULT": "0.5rem",-->
+<!--                        "lg": "0.75rem",-->
+<!--                        "xl": "1rem",-->
+<!--                        "full": "9999px"-->
+<!--                    },-->
+<!--                    backgroundImage: {-->
+<!--                        'tang-pattern': "url(\"data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%2382B29B' fill-opacity='0.1'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E\")",-->
+<!--                    }-->
+<!--                },-->
+<!--            },-->
+<!--        }-->
+<!--    </script>-->
+
+    <style type="text/tailwindcss">
+        @layer theme {
+            :root {
+                --color-primary: #436C85;
+                --color-secondary: #B73F42;
+                --color-accent: #DE9960;
+                --color-success: #82B29B;
+                --color-background-light: #EEE6DB;
+                        /*#EEE6DB;*/
+                --color-background-dark: #2C2823;
+                --color-text-light: #1F1B17;
+                --color-text-dark: #EAE3D9;
+                --color-subtle-light: #DCD2C3;
+                --color-subtle-dark: #423C35;
+            }
+        }
+    </style>
+    <script>
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        primary: "var(--color-primary)",
+                        secondary: "var(--color-secondary)",
+                        accent: "var(--color-accent)",
+                        success: "var(--color-success)",
+                        "background-light": "var(--color-background-light)",
+                        "background-dark": "var(--color-background-dark)",
+                        "text-light": "var(--color-text-light)",
+                        "text-dark": "var(--color-text-dark)",
+                        "subtle-light": "var(--color-subtle-light)",
+                        "subtle-dark": "var(--color-subtle-dark)",
+                    },
+                    fontFamily: {
+                        display: ["Inter", "sans-serif"],
+                        // display: ["Playfair Display", "serif"],
+                        body: ["Noto Sans SC", "sans-serif"],
+                        // body: ["Noto Sans SC", "sans-serif"],
+                    },
+                    borderRadius: {
+                        DEFAULT: "0.5rem",
+                        lg: "0.75rem",
+                        xl: "1rem",
+                        full: "9999px",
+                    },
+                    backgroundImage: {
+                        'tang-pattern': "url(\"data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23B73F42' fill-opacity='0.1'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E\")",
+                    }
+                },
+            },
+        };
+    </script>
+    <style>
+        .group:hover .group-hover\:block {
+            display: block;
+        }
+        .text-shadow {
+            text-shadow: 1px 1px 3px rgba(0,0,0,0.1);
+        }
+    </style>
+</head>
+
+<body class="bg-background-light font-display text-text-primary bg-tang-pattern">
+<div class="flex flex-col min-h-screen bg-background-light/80">
+
+    <header class="bg-background-light/80 backdrop-blur-sm sticky top-0 z-50 border-b border-base">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-20">
+
+                <div class="flex items-center gap-3">
+                    <svg class="h-8 w-8 text-secondary" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M12 2L1 6.5V17.5L12 22L23 17.5V6.5L12 2ZM11 12.44L4 8.5V16.34L11 20.24V12.44ZM13 12.44V20.24L20 16.34V8.5L13 12.44ZM12 4.1L18.93 7.5L12 10.9L5.07 7.5L12 4.1Z"></path>
+                    </svg>
+                    <h1 onclick="window.location.href='home_screen.html'" class="text-2xl font-bold tracking-tight font-serif-sc text-primary cursor-pointer">Xinuo Zhou</h1>
+                </div>
+
+                <nav class="hidden md:flex items-center space-x-8">
+                    <a onclick="window.location.href='about_me.html'" class="text-text-secondary hover:text-primary transition-colors font-medium cursor-pointer">About me</a>
+                    <a onclick="window.location.href='project_showcase.html'" class="text-secondary font-semibold cursor-pointer">Projects</a>
+                    <a onclick="window.location.href='contact_me.html'" class="text-text-secondary hover:text-primary transition-colors font-medium cursor-pointer">Contact</a>
+                </nav>
+
+                <button popovertarget="mobile-menu" class="md:hidden p-2 rounded-md text-text-secondary hover:text-primary hover:bg-primary/10 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-primary">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M4 6h16M4 12h16M4 18h16" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
+                    </svg>
+                </button>
+
+                <div id="mobile-menu" popover class="md:hidden m-0 mt-2 p-4 bg-background-light border border-base rounded-lg shadow-lg w-48">
+                    <nav class="flex flex-col gap-4">
+                        <a onclick="window.location.href='about_me.html'" class="text-text-secondary hover:text-primary transition-colors font-medium cursor-pointer">About me</a>
+                        <a onclick="window.location.href='project_showcase.html'" class="text-secondary font-semibold cursor-pointer">Projects</a>
+                        <a onclick="window.location.href='contact_me.html'" class="text-text-secondary hover:text-primary transition-colors font-medium cursor-pointer">Contact</a>
+                    </nav>
+                </div>
+
+            </div>
+        </div>
+    </header>
+<!--</div>-->
+<!--</body>-->
+
+
+<main class="flex-grow container mx-auto px-4 sm:px-6 lg:px-8 py-16">
+<div class="text-center mb-16">
+<h2 class="text-4xl md:text-5xl font-extrabold tracking-tight text-primary font-serif-sc text-shadow">Project Showcase</h2>
+<p class="mt-4 max-w-2xl mx-auto text-lg text-text-secondary">A curated gallery of my work, inspired by the harmony of tradition and modern user experience.</p>
+</div>
+
+<!--项目陈列表格-->
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 lg:gap-12">
+
+<!--    First project-->
+<div onclick="window.location.href='project_spatial_timer_study1_details.html'" class="group relative overflow-hidden rounded-xl border-4 border-base bg-base shadow-lg hover:shadow-2xl transition-all duration-300 hover:-translate-y-1">
+<div class="absolute top-2 right-2 h-6 w-6 bg-accent rounded-full z-10 border-2 border-background"></div>
+<div class="w-full h-64 bg-cover bg-center" style='background-image: url("st_2.png");'></div>
+
+<div class="p-6 bg-base">
+<h3 class="text-xl font-bold text-primary font-serif-sc">Spatial Timer - Study 1 </h3>
+<p class="mt-2 text-text-secondary text-sm">revolutionizing time in the kitchen: enhancing multitasking efficiency in the kitchen with an augmented reality-based spatial timer </p>
+<a class="inline-block mt-4 text-sm font-semibold text-secondary hover:text-red-700 transition-colors" href="#">View Project →</a>
+</div>
+</div>
+
+
+<!-- Second project -->
+<div onclick="window.location.href='project_spatial_timer_study2&3details.html'" class="group relative overflow-hidden rounded-xl border-4 border-base bg-base shadow-lg hover:shadow-2xl transition-all duration-300 hover:-translate-y-1">
+<div class="absolute top-2 right-2 h-6 w-6 bg-accent rounded-full z-10 border-2 border-background"></div>
+<div class="w-full h-64 bg-cover bg-center" style='background-image: url("st_2.png");'></div>
+<div class="p-6 bg-base">
+<h3 class="text-xl font-bold text-primary font-serif-sc">Spatial Timer - Study 2 & 3</h3>
+<p class="mt-2 text-text-secondary text-sm"> revolutionizing time in the kitchen: enhancing multitasking efficiency in the kitchen with an augmented reality-based spatial timer </p>
+<a class="inline-block mt-4 text-sm font-semibold text-secondary hover:text-red-700 transition-colors" href="#">View Project →</a>
+</div>
+</div>
+<div class="group relative overflow-hidden rounded-xl border-4 border-base bg-base shadow-lg hover:shadow-2xl transition-all duration-300 hover:-translate-y-1">
+<div class="absolute top-2 right-2 h-6 w-6 bg-accent rounded-full z-10 border-2 border-background"></div>
+<div class="w-full h-64 bg-cover bg-center" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuDsqKmSV1cao6Asxpy5MndhInXR00cLupeiGemAak7FUYMzkuwzRGde2Vs_qugK_Psx_N0n5id_EX7-IsncWs0whFWgf-80aB9tXWsfC2HpZxtg0pxM_UybTngFYPPdmNzdzb9hAMDTPJNHbR0uXfUwE9zGO0pFEffH5KL1l5fx40koeDULVLjNm8XGg727IMvWWPKr3DRlmIJOViQLlLTY6mv_VE7pRCftdyCEdCqQEEOjusw5yNk-cWoMrp0WR5mWmkvPZjv6qYc");'></div>
+<div class="p-6 bg-base">
+<h3 class="text-xl font-bold text-primary font-serif-sc">Redesign Circuit App</h3>
+<p class="mt-2 text-text-secondary text-sm">An intuitive dashboard for managing complex data, designed for efficiency and clarity.</p>
+<a class="inline-block mt-4 text-sm font-semibold text-secondary hover:text-red-700 transition-colors" href="#">View Project →</a>
+</div>
+</div>
+<div class="group relative overflow-hidden rounded-xl border-4 border-base bg-base shadow-lg hover:shadow-2xl transition-all duration-300 hover:-translate-y-1">
+<div class="absolute top-2 right-2 h-6 w-6 bg-accent rounded-full z-10 border-2 border-background"></div>
+<div class="w-full h-64 bg-cover bg-center" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuBPIq3GrAoFus_7cgbVL7BPYsoQisyFxf0yoDqJWVVI3cBpizdMxNtC2dlhkhhSGXRMgmfP9r2oEQ5B0XUtBcUcX9OXN8tKasvBcLSpjOfxqjnQST-XnEkf1iD2Z3x6hgBZp2pgRN-sQ2B4PSmPxXDTnzpU4FsiLnWoIpGPdfB0KlIxAYUkSexxYwswFOnB-3hibc-hc_zRuyFWg0XS53wLfggkLPHBN3G2QO1zK3vKeSwY6dxJ7yM8Y2iB35ZYgQtf80WG1PPaPbU");'></div>
+<div class="p-6 bg-base">
+<h3 class="text-xl font-bold text-primary font-serif-sc">Brand Identity</h3>
+<p class="mt-2 text-text-secondary text-sm">Development of a unique brand identity for a startup, including logo, color palette, and style guide.</p>
+<a class="inline-block mt-4 text-sm font-semibold text-secondary hover:text-red-700 transition-colors" href="#">View Project →</a>
+</div>
+</div>
+<div class="group relative overflow-hidden rounded-xl border-4 border-base bg-base shadow-lg hover:shadow-2xl transition-all duration-300 hover:-translate-y-1">
+<div class="absolute top-2 right-2 h-6 w-6 bg-accent rounded-full z-10 border-2 border-background"></div>
+<div class="w-full h-64 bg-cover bg-center" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuBSJtrNNB12dusVzQGRiwwuN5yKcWir4a9eIgjPaII1lQ0FkTWqIN6avNdVb5DRQ76Zq6jzxm_XDOQvExtBLZv1jnDsxrUy2K5koWYjAyvwY8z4Io-bz3W648257JF32a9X80la8k_ba2E11rbeyv6itHeIiLTIQI_FOX7mJiBOOXhOIrR0Tc5ZXJFvvGZnNVEOiCGfs5-NPT2FCZ565EOdFBRaqqNIgWI6YMtGaV4q_KbNjFVEfqx0YoFqujvKc_RMhbrmwBfj4nY");'></div>
+<div class="p-6 bg-base">
+<h3 class="text-xl font-bold text-primary font-serif-sc">UX Research Study</h3>
+<p class="mt-2 text-text-secondary text-sm">In-depth user research to inform the design of a new productivity tool.</p>
+<a class="inline-block mt-4 text-sm font-semibold text-secondary hover:text-red-700 transition-colors" href="#">View Project →</a>
+</div>
+</div>
+<div class="group relative overflow-hidden rounded-xl border-4 border-dashed border-neutral/50 bg-neutral/10 flex flex-col items-center justify-center text-center p-6 hover:bg-neutral/20 transition-colors duration-300 hover:-translate-y-1">
+<div class="w-16 h-16 bg-secondary/10 rounded-full flex items-center justify-center mb-4 border-2 border-secondary/20">
+<svg class="w-8 h-8 text-secondary" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 6v6m0 0v6m0-6h6m-6 0H6" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path></svg>
+</div>
+<h3 class="text-xl font-bold text-primary font-serif-sc">More to Come</h3>
+<p class="mt-2 text-text-secondary text-sm">New creations are always on the horizon. Stay tuned for what's next.</p>
+</div>
+</div>
+</main>
+<footer class="bg-base/70 border-t border-base">
+<div class="container mx-auto px-4 sm:px-6 lg:px-8 py-12">
+<div class="flex flex-col md:flex-row justify-between items-center space-y-8 md:space-y-0">
+<div class="text-center md:text-left">
+<p class="text-primary font-semibold font-serif-sc">© 2024 Artisan UX</p>
+<p class="text-text-secondary text-sm">Blending ancient artistry with modern design.</p>
+</div>
+<div class="flex justify-center space-x-6">
+<a class="text-text-secondary hover:text-primary transition-colors" href="#">
+<svg aria-hidden="true" class="h-6 w-6" fill="currentColor" viewBox="0 0 24 24"><path clip-rule="evenodd" d="M22 12c0-5.523-4.477-10-10-10S2 6.477 2 12c0 4.991 3.657 9.128 8.438 9.878v-6.987h-2.54V12h2.54V9.797c0-2.506 1.492-3.89 3.777-3.89 1.094 0 2.238.195 2.238.195v2.46h-1.26c-1.243 0-1.63.771-1.63 1.562V12h2.773l-.443 2.89h-2.33v6.988C18.343 21.128 22 16.991 22 12z" fill-rule="evenodd"></path></svg>
+</a>
+<a class="text-text-secondary hover:text-primary transition-colors" href="#">
+<svg aria-hidden="true" class="h-6 w-6" fill="currentColor" viewBox="0 0 24 24"><path d="M8.29 20.251c7.547 0 11.675-6.253 11.675-11.675 0-.178 0-.355-.012-.53A8.348 8.348 0 0022 5.92a8.19 8.19 0 01-2.357.646 4.118 4.118 0 001.804-2.27 8.224 8.224 0 01-2.605.996 4.107 4.107 0 00-6.993 3.743 11.65 11.65 0 01-8.457-4.287 4.106 4.106 0 001.27 5.477A4.072 4.072 0 012.8 9.71v.052a4.105 4.105 0 003.292 4.022 4.095 4.095 0 01-1.853.07 4.108 4.108 0 003.834 2.85A8.233 8.233 0 012 18.407a11.616 11.616 0 006.29 1.84"></path></svg>
+</a>
+<a class="text-text-secondary hover:text-primary transition-colors" href="#">
+<svg aria-hidden="true" class="h-6 w-6" fill="currentColor" viewBox="0 0 24 24"><path clip-rule="evenodd" d="M12 2C6.477 2 2 6.477 2 12.011c0 4.432 2.865 8.18 6.839 9.504.5.092.682-.217.682-.482 0-.237-.009-.868-.014-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.031-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.203 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.338 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.001 10.001 0 0022 12.011C22 6.477 17.523 2 12 2z" fill-rule="evenodd"></path></svg>
+</a>
+</div>
+</div>
+</div>
+</footer>
+</div>
+
+</body></html>
