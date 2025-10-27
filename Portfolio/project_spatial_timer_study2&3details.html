@@ -707,28 +707,74 @@
                 </section>
 
 
+<!--                <section>-->
+<!--                    <h3 class="text-2xl font-display font-bold mb-4 text-secondary">Unity Scene version</h3>-->
+<!--                    <p class="text-lg leading-relaxed text-text-light/90 dark:text-text-dark/90 mb-6 font-body">-->
+<!--                        Our design process involved several key stages to ensure a user-centric solution.-->
+<!--                    </p>-->
+<!--                    <ol class="list-none space-y-4 text-lg leading-relaxed text-text-light/90 dark:text-text-dark/90 font-body">-->
+<!--                        <li class="flex items-start"><span-->
+<!--                                class="text-primary font-bold mr-3">壹.</span><span><strong>User Research:</strong> Conducted interviews and testing to identify pain points and understand user needs.</span>-->
+<!--                        </li>-->
+<!--                        <li class="flex items-start"><span-->
+<!--                                class="text-primary font-bold mr-3">貳.</span><span><strong>Information Architecture:</strong> Restructured the app's IA for a more logical and intuitive flow.</span>-->
+<!--                        </li>-->
+<!--                        <li class="flex items-start"><span-->
+<!--                                class="text-primary font-bold mr-3">叁.</span><span><strong>Wireframing &amp; Prototyping:</strong> Developed low and high-fidelity wireframes, leading to an interactive prototype.</span>-->
+<!--                        </li>-->
+<!--                        <li class="flex items-start"><span-->
+<!--                                class="text-primary font-bold mr-3">肆.</span><span><strong>Visual Design:</strong> Created a clean, modern design system aligned with the brand's identity, infused with Tang elements.</span>-->
+<!--                        </li>-->
+<!--                        <li class="flex items-start"><span-->
+<!--                                class="text-primary font-bold mr-3">伍.</span><span><strong>Usability Testing:</strong> Validated the new design through rigorous testing and iterated based on feedback.</span>-->
+<!--                        </li>-->
+<!--                    </ol>-->
+<!--                </section>-->
+
+
+
+
                 <section>
                     <h3 class="text-2xl font-display font-bold mb-4 text-secondary">Unity Scene version</h3>
                     <p class="text-lg leading-relaxed text-text-light/90 dark:text-text-dark/90 mb-6 font-body">
-                        Our design process involved several key stages to ensure a user-centric solution.
+                        To ensure the smooth running of the experiment, an experiment scene was created for participants
+                        to use.
                     </p>
-                    <ol class="list-none space-y-4 text-lg leading-relaxed text-text-light/90 dark:text-text-dark/90 font-body">
-                        <li class="flex items-start"><span
-                                class="text-primary font-bold mr-3">壹.</span><span><strong>User Research:</strong> Conducted interviews and testing to identify pain points and understand user needs.</span>
-                        </li>
-                        <li class="flex items-start"><span
-                                class="text-primary font-bold mr-3">貳.</span><span><strong>Information Architecture:</strong> Restructured the app's IA for a more logical and intuitive flow.</span>
-                        </li>
-                        <li class="flex items-start"><span
-                                class="text-primary font-bold mr-3">叁.</span><span><strong>Wireframing &amp; Prototyping:</strong> Developed low and high-fidelity wireframes, leading to an interactive prototype.</span>
-                        </li>
-                        <li class="flex items-start"><span
-                                class="text-primary font-bold mr-3">肆.</span><span><strong>Visual Design:</strong> Created a clean, modern design system aligned with the brand's identity, infused with Tang elements.</span>
-                        </li>
-                        <li class="flex items-start"><span
-                                class="text-primary font-bold mr-3">伍.</span><span><strong>Usability Testing:</strong> Validated the new design through rigorous testing and iterated based on feedback.</span>
-                        </li>
-                    </ol>
+
+                    <div class="mb-8">
+                        <h4 class="text-xl font-bold text-secondary mb-3">Scenario for Study 2</h4>
+                        <p class="text-lg leading-relaxed text-text-light/90 dark:text-text-dark/90 mb-4">
+                            <strong class="text-primary">Core Objective:</strong> Evaluate the creation interaction experience and usability of the "Spatial Timer," and simulate an AR environment (the passthrough function is reused in Study 3).
+                        </p>
+                        <p class="text-lg leading-relaxed text-text-light/90 dark:text-text-dark/90 mb-2">
+                            <strong class="text-primary">Technical & Functional Implementation:</strong>
+                        </p>
+                        <p class="text-lg leading-relaxed text-text-light/90 dark:text-text-dark/90 mb-3 pl-6">
+                            <strong class="text-accent"> AR Environment Setup:</strong> Replace the main camera with an OVR Camera Rig, enable the Passthrough function in OVR settings to allow participants to observe and interact with the real world via Meta Quest headsets. Load the OVR Passthrough layer for seamless integration between the Spatial Timer and real scenes.
+                        </p>
+                        <p class="text-lg leading-relaxed text-text-light/90 dark:text-text-dark/90 pl-6">
+                            <strong class="text-accent"> Timer Deployment & Debugging:</strong> Deploy the AR environment, place the Spatial Timer prefab, and activate timer generation. Add a debugging UI to assist gesture familiarization—attach debuggable components to gesture recognition objects and a line renderer to the hand model.
+                        </p>
+                    </div>
+
+                    <div>
+                        <h4 class="text-xl font-bold text-secondary mb-3">Scenario for Study 3</h4>
+                        <p class="text-lg leading-relaxed text-text-light/90 dark:text-text-dark/90 mb-4">
+                            <strong class="text-primary">Core Objective:</strong> Evaluate the effectiveness of the Spatial Timer in multitask switching and attention management, and compare it with the traditional mobile phone timer.
+                        </p>
+                        <p class="text-lg leading-relaxed text-text-light/90 dark:text-text-dark/90 mb-2">
+                            <strong class="text-primary">Technical & Functional Implementation:</strong>
+                        </p>
+                        <p class="text-lg leading-relaxed text-text-light/90 dark:text-text-dark/90 mb-3 pl-6">
+                            <strong class="text-accent"> Basic Environment Configuration:</strong> Build an AR environment for tracking and managing Spatial Timer interaction gestures, adjust timing logic. Place 5 duplicated timer prefabs side by side in 3D space, adjust positions based on laboratory size, and correct initial position deviations during loading.
+                        </p>
+                        <p class="text-lg leading-relaxed text-text-light/90 dark:text-text-dark/90 mb-3 pl-6">
+                            <strong class="text-accent"> Preliminary Exploratory Study:</strong> After scenario loading, the researcher pre-places 5 timers corresponding to 5 tasks. During the experiment, countdown durations are randomly informed to participants to ensure randomness.
+                        </p>
+                        <p class="text-lg leading-relaxed text-text-light/90 dark:text-text-dark/90 pl-6">
+                            <strong class="text-accent"> Later Summative Study:</strong> Remove the timers original main interface to avoid accidental keypad touches; Develop the "randomSelect.cs" script randomly select 1 timer every minute (initially from Tasks 1–4), generate dynamic prompts via sound effects and scaling to assist multitasking and attention regulation.
+                        </p>
+                    </div>
                 </section>
 
                 <section>
