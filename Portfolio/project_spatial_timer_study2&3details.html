@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:scoring="http://www.w3.org/1999/xhtml">
 <head>
     <meta charset="utf-8"/>
     <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
@@ -706,101 +706,133 @@
                     </div>
                 </section>
 
+                <section>
+                    <!-- Study 2 部分 -->
+                    <div class="mb-10">
+                        <h3 class="text-2xl font-display font-bold mb-4 text-secondary">Study 2</h3>
+                        <p class="text-lg leading-relaxed text-text-light/90 dark:text-text-dark/90 font-body mb-4">
+                            <strong class="text-primary">Core Objective:</strong> Evaluate the experience and usability of users creating and interacting with Spatial Timers.
+                        </p>
+                        <p class="text-lg leading-relaxed text-text-light/90 dark:text-text-dark/90 font-body mb-4">
+                            <strong class="text-primary">Scenario Design & Implementation:</strong>
+                        </p>
+                        <ul class="list-disc pl-6 text-lg leading-relaxed text-text-light/90 dark:text-text-dark/90 font-body space-y-2">
+                            <li>Built an AR environment using OVR Camera Rig (with Passthrough function for Meta Quest) to integrate Spatial Timers with the real world.</li>
+                            <li>Deployed Spatial Timer prefabs and added debugging UI (hand model line renderers: green for valid gestures, red otherwise) to assist timer generation.</li>
+                        </ul>
 
-<!--                <section>-->
-<!--                    <h3 class="text-2xl font-display font-bold mb-4 text-secondary">Unity Scene version</h3>-->
-<!--                    <p class="text-lg leading-relaxed text-text-light/90 dark:text-text-dark/90 mb-6 font-body">-->
-<!--                        Our design process involved several key stages to ensure a user-centric solution.-->
-<!--                    </p>-->
-<!--                    <ol class="list-none space-y-4 text-lg leading-relaxed text-text-light/90 dark:text-text-dark/90 font-body">-->
-<!--                        <li class="flex items-start"><span-->
-<!--                                class="text-primary font-bold mr-3">壹.</span><span><strong>User Research:</strong> Conducted interviews and testing to identify pain points and understand user needs.</span>-->
-<!--                        </li>-->
-<!--                        <li class="flex items-start"><span-->
-<!--                                class="text-primary font-bold mr-3">貳.</span><span><strong>Information Architecture:</strong> Restructured the app's IA for a more logical and intuitive flow.</span>-->
-<!--                        </li>-->
-<!--                        <li class="flex items-start"><span-->
-<!--                                class="text-primary font-bold mr-3">叁.</span><span><strong>Wireframing &amp; Prototyping:</strong> Developed low and high-fidelity wireframes, leading to an interactive prototype.</span>-->
-<!--                        </li>-->
-<!--                        <li class="flex items-start"><span-->
-<!--                                class="text-primary font-bold mr-3">肆.</span><span><strong>Visual Design:</strong> Created a clean, modern design system aligned with the brand's identity, infused with Tang elements.</span>-->
-<!--                        </li>-->
-<!--                        <li class="flex items-start"><span-->
-<!--                                class="text-primary font-bold mr-3">伍.</span><span><strong>Usability Testing:</strong> Validated the new design through rigorous testing and iterated based on feedback.</span>-->
-<!--                        </li>-->
-<!--                    </ol>-->
-<!--                </section>-->
+                        <p class="text-lg leading-relaxed text-text-light/90 dark:text-text-dark/90 font-body mb-2">
+                            <strong class="text-primary">Observation Data:</strong> System Usability Scale (SUS)
+                        </p>
+                        <ul class="list-disc pl-6 text-lg leading-relaxed text-text-light/90 dark:text-text-dark/90 font-body space-y-2">
+                            <li> Used a standardized SUS questionnaire.</li>
+                            <li> Spatial Timer and Baseline Timer (traditional) shared the same structure for comparison.</li>
+                        </ul>
 
+                        <p class="text-lg leading-relaxed text-text-light/90 dark:text-text-dark/90 font-body mb-2">
+                            <strong class="text-primary">Findings:</strong>
+                        </p>
+                        <ul class="list-disc pl-6 text-lg leading-relaxed text-text-light/90 dark:text-text-dark/90 font-body space-y-2">
+                            <li>Spatial Timer showed a slight efficiency gain in timer generation tasks.</li>
+                            <li>Challenges included spatial misalignment and inconsistent haptic/visual information.</li>
+<!--                            <li>SUS Results: Spatial Timers outperformed single-device timers.</li>-->
+                        </ul>
 
+                    </div>
+
+                        <h3 class="text-xl font-display font-bold mb-4 text-primary">Outcome</h3>
+                        <p class="text-lg leading-relaxed text-text-light/90 dark:text-text-dark/90 mb-6 font-body">
+                            SUS Results: Spatial Timers outperformed single-device timers.
+                        </p>
+
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                        <div class="bg-background-light dark:bg-background-dark border-l-4 border-accent p-6 rounded-lg shadow-md">
+                            <p class="text-3xl font-bold text-accent font-display">79.43</p>
+                            <p class="mt-1 text-base font-medium font-body">Spatial Timer</p>
+                        </div>
+                        <div class="bg-background-light dark:bg-background-dark border-l-4 border-success p-6 rounded-lg shadow-md">
+                            <p class="text-3xl font-bold text-success font-display">66.02</p>
+                            <p class="mt-1 text-base font-medium font-body">Baseline Timer(phone timer)</p>
+                        </div>
+                        <div class="bg-background-light dark:bg-background-dark border-l-4 border-secondary p-6 rounded-lg sm:col-span-2 shadow-md">
+                            <p class="text-3xl font-bold text-secondary font-display">59%
+                            </p>
+                            <p class="mt-1 text-base font-medium font-body"> participants finding Spatial Timer more efficient.</p>
+                        </div>
+                    </div>
+
+                </section>
 
 
                 <section>
-                    <h3 class="text-2xl font-display font-bold mb-4 text-secondary">Unity Scene version</h3>
-                    <p class="text-lg leading-relaxed text-text-light/90 dark:text-text-dark/90 mb-6 font-body">
-                        To ensure the smooth running of the experiment, an experiment scene was created for participants
-                        to use.
-                    </p>
-
-                    <div class="mb-8">
-                        <h4 class="text-xl font-bold text-secondary mb-3">Scenario for Study 2</h4>
-                        <p class="text-lg leading-relaxed text-text-light/90 dark:text-text-dark/90 mb-4">
-                            <strong class="text-primary">Core Objective:</strong> Evaluate the creation interaction experience and usability of the "Spatial Timer," and simulate an AR environment (the passthrough function is reused in Study 3).
-                        </p>
-                        <p class="text-lg leading-relaxed text-text-light/90 dark:text-text-dark/90 mb-2">
-                            <strong class="text-primary">Technical & Functional Implementation:</strong>
-                        </p>
-                        <p class="text-lg leading-relaxed text-text-light/90 dark:text-text-dark/90 mb-3 pl-6">
-                            <strong class="text-accent"> AR Environment Setup:</strong> Replace the main camera with an OVR Camera Rig, enable the Passthrough function in OVR settings to allow participants to observe and interact with the real world via Meta Quest headsets. Load the OVR Passthrough layer for seamless integration between the Spatial Timer and real scenes.
-                        </p>
-                        <p class="text-lg leading-relaxed text-text-light/90 dark:text-text-dark/90 pl-6">
-                            <strong class="text-accent"> Timer Deployment & Debugging:</strong> Deploy the AR environment, place the Spatial Timer prefab, and activate timer generation. Add a debugging UI to assist gesture familiarization—attach debuggable components to gesture recognition objects and a line renderer to the hand model.
-                        </p>
-                    </div>
-
+                    <!-- Study 3 部分 -->
                     <div>
-                        <h4 class="text-xl font-bold text-secondary mb-3">Scenario for Study 3</h4>
-                        <p class="text-lg leading-relaxed text-text-light/90 dark:text-text-dark/90 mb-4">
-                            <strong class="text-primary">Core Objective:</strong> Evaluate the effectiveness of the Spatial Timer in multitask switching and attention management, and compare it with the traditional mobile phone timer.
+                        <h3 class="text-2xl font-display font-bold mb-4 text-accent">Study 3</h3>
+                        <p class="text-lg leading-relaxed text-text-light/90 dark:text-text-dark/90 font-body mb-4">
+                            <strong class="text-primary">Core Objective:</strong> Evaluate the effectiveness of the Spatial Timer in multi-task switching and attention management, and compare it with the traditional mobile phone timer.
                         </p>
-                        <p class="text-lg leading-relaxed text-text-light/90 dark:text-text-dark/90 mb-2">
-                            <strong class="text-primary">Technical & Functional Implementation:</strong>
+                        <p class="text-lg leading-relaxed text-text-light/90 dark:text-text-dark/90 font-body mb-2">
+                            <strong class="text-primary">Scenario Design & Implementation:</strong>
                         </p>
-                        <p class="text-lg leading-relaxed text-text-light/90 dark:text-text-dark/90 mb-3 pl-6">
-                            <strong class="text-accent"> Basic Environment Configuration:</strong> Build an AR environment for tracking and managing Spatial Timer interaction gestures, adjust timing logic. Place 5 duplicated timer prefabs side by side in 3D space, adjust positions based on laboratory size, and correct initial position deviations during loading.
+                        <ul class="list-disc pl-6 text-lg leading-relaxed text-text-light/90 dark:text-text-dark/90 font-body space-y-2 mb-4">
+                            <li>Set up 5 side-by-side Spatial Timer prefabs in 3D space for multi-task scenarios, adjusting positions based on laboratory size.</li>
+                            <li>Developed "randomSelect.cs" script to randomly prompt 1 timer every minute (via sound/scale) for attention management.</li>
+                        </ul>
+                        <p class="text-lg leading-relaxed text-text-light/90 dark:text-text-dark/90 font-body mb-2">
+                            <strong class="text-primary">Observation Data:</strong> NASA TLX Score, Post-experiment Interview, Affinity Diagram with Inductive Coding
                         </p>
-                        <p class="text-lg leading-relaxed text-text-light/90 dark:text-text-dark/90 mb-3 pl-6">
-                            <strong class="text-accent"> Preliminary Exploratory Study:</strong> After scenario loading, the researcher pre-places 5 timers corresponding to 5 tasks. During the experiment, countdown durations are randomly informed to participants to ensure randomness.
+                        <ul class="list-disc pl-6 text-lg leading-relaxed text-text-light/90 dark:text-text-dark/90 font-body space-y-2 mb-4">
+                            <li>NASA TLX: Evaluated via Pairwise Comparisons (weight) and Rating Scales, calculating Weighted Rating as Sum(Weight) / Sum(Weight*Rating).</li>
+                            <li>Affinity Diagram: Categorized user feedback into themes like "Baseline Drawbacks" (distraction, bad time management) and "Spatial timers benefits" (visibility, intuitive, easy to operate).</li>
+                        </ul>
+                        <p class="text-lg leading-relaxed text-text-light/90 dark:text-text-dark/90 font-body mb-2">
+                            <strong class="text-primary">Findings:</strong>
                         </p>
-                        <p class="text-lg leading-relaxed text-text-light/90 dark:text-text-dark/90 pl-6">
-                            <strong class="text-accent"> Later Summative Study:</strong> Remove the timers original main interface to avoid accidental keypad touches; Develop the "randomSelect.cs" script randomly select 1 timer every minute (initially from Tasks 1–4), generate dynamic prompts via sound effects and scaling to assist multitasking and attention regulation.
-                        </p>
+                        <ul class="list-disc pl-6 text-lg leading-relaxed text-text-light/90 dark:text-text-dark/90 font-body space-y-2">
+                            <li>Impact on Workload: No statistically significant reductions in workload, but mean scores were slightly lower than single-device timers across 6 factors (Mental Demand, Physical Demand, etc.).</li>
+                            <li>Interview Data: Highlighted intuitiveness of time perception, smoother attention switching in multitasking, and appreciation for interactive features/innovations.</li>
+                        </ul>
+<!--                        <p class="text-lg leading-relaxed text-text-light/90 dark:text-text-dark/90 font-body pl-6 mb-4">-->
+<!--                            *Corresponding visuals: Multi-task setups (e.g., Task 4-5 with cups, beads), NASA TLX rating scales, Affinity Diagram boards, t-test and bar chart comparisons.-->
+<!--                        </p>-->
+
+                        <!-- Future Work 部分 -->
+<!--                        <div class="mt-8">-->
+<!--                            <h4 class="text-xl font-bold text-secondary mb-3">Future Work</h4>-->
+<!--                            <ul class="list-disc pl-6 text-lg leading-relaxed text-text-light/90 dark:text-text-dark/90 font-body space-y-2">-->
+<!--                                <li>Expand research with <strong>More Sample Size</strong> to enhance statistical power.</li>-->
+<!--                                <li>Include <strong>Diverse user demographics</strong> to assess generalizability across different user groups.</li>-->
+<!--                            </ul>-->
+<!--                        </div>-->
                     </div>
                 </section>
 
                 <section>
-                    <h3 class="text-2xl font-display font-bold mb-4 text-secondary">Outcome</h3>
+                    <h3 class="text-2xl font-display font-bold mb-4 text-secondary">Future Work</h3>
                     <p class="text-lg leading-relaxed text-text-light/90 dark:text-text-dark/90 mb-6 font-body">
-                        The redesign yielded significant positive results, validating our user-centered
-                        approach.
+                    <ul class="list-disc pl-6 text-lg leading-relaxed text-text-light/90 dark:text-text-dark/90 font-body space-y-2">
+                        <li>Expand research with <strong>More Sample Size</strong> to enhance statistical power.</li>
+                        <li>Include <strong>Diverse user demographics</strong> to assess generalizability across different user groups.</li>
+                    </ul>
                     </p>
-                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
-                        <div class="bg-background-light dark:bg-background-dark border-l-4 border-accent p-6 rounded-lg shadow-md">
-                            <p class="text-3xl font-bold text-accent font-display">20%</p>
-                            <p class="mt-1 text-base font-medium font-body">Increase in user engagement</p>
-                        </div>
-                        <div class="bg-background-light dark:bg-background-dark border-l-4 border-success p-6 rounded-lg shadow-md">
-                            <p class="text-3xl font-bold text-success font-display">15%</p>
-                            <p class="mt-1 text-base font-medium font-body">Reduction in task completion
-                                time</p>
-                        </div>
-                        <div class="bg-background-light dark:bg-background-dark border-l-4 border-secondary p-6 rounded-lg sm:col-span-2 shadow-md">
-                            <p class="text-3xl font-bold text-secondary font-display">4.5<span
-                                    class="text-2xl">/5</span>
-                            </p>
-                            <p class="mt-1 text-base font-medium font-body">Average App Store Rating (from
-                                3.8)</p>
-                        </div>
-                    </div>
+<!--                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">-->
+<!--                        <div class="bg-background-light dark:bg-background-dark border-l-4 border-accent p-6 rounded-lg shadow-md">-->
+<!--                            <p class="text-3xl font-bold text-accent font-display">20%</p>-->
+<!--                            <p class="mt-1 text-base font-medium font-body">Increase in user engagement</p>-->
+<!--                        </div>-->
+<!--                        <div class="bg-background-light dark:bg-background-dark border-l-4 border-success p-6 rounded-lg shadow-md">-->
+<!--                            <p class="text-3xl font-bold text-success font-display">15%</p>-->
+<!--                            <p class="mt-1 text-base font-medium font-body">Reduction in task completion-->
+<!--                                time</p>-->
+<!--                        </div>-->
+<!--                        <div class="bg-background-light dark:bg-background-dark border-l-4 border-secondary p-6 rounded-lg sm:col-span-2 shadow-md">-->
+<!--                            <p class="text-3xl font-bold text-secondary font-display">4.5<span-->
+<!--                                    class="text-2xl">/5</span>-->
+<!--                            </p>-->
+<!--                            <p class="mt-1 text-base font-medium font-body">Average App Store Rating (from-->
+<!--                                3.8)</p>-->
+<!--                        </div>-->
+<!--                    </div>-->
                 </section>
             </div>
         </div>
