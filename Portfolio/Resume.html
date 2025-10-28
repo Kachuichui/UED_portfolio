@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:scoring="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8"/>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+    <title>Project one</title>
+    <link href="https://fonts.googleapis.com" rel="preconnect"/>
+    <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&amp;family=Noto+Sans+SC:wght@400;500;700&amp;display=swap"
+          rel="stylesheet"/>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <!--    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>-->
+    <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+    <style type="text/tailwindcss">
+        @layer theme {
+            :root {
+                --color-primary: #436C85;
+                --color-secondary: #B73F42;
+                --color-accent: #DE9960;
+                --color-success: #82B29B;
+                --color-background-light: #EEE6DB;
+                --color-background-dark: #2C2823;
+                --color-text-light: #1F1B17;
+                --color-text-dark: #EAE3D9;
+                --color-subtle-light: #DCD2C3;
+                --color-subtle-dark: #423C35;
+            }
+        }
+    </style>
+    <style>
+        .pdf {
+            width: 100%;
+            aspect-ratio: 4 / 3;
+        }
+
+        .pdf,
+        html,
+        body {
+            height: 100%;
+            margin: 0;
+            padding: 0;
+        }
+
+        h1,
+        h3 {
+            text-align: center;
+        }
+
+        h1 {
+            color: green;
+        }
+    </style>
+    <script>
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        primary: "var(--color-primary)",
+                        secondary: "var(--color-secondary)",
+                        accent: "var(--color-accent)",
+                        success: "var(--color-success)",
+                        "background-light": "var(--color-background-light)",
+                        "background-dark": "var(--color-background-dark)",
+                        "text-light": "var(--color-text-light)",
+                        "text-dark": "var(--color-text-dark)",
+                        "subtle-light": "var(--color-subtle-light)",
+                        "subtle-dark": "var(--color-subtle-dark)",
+                    },
+                    fontFamily: {
+                        display: ["Inter", "sans-serif"],
+                        // display: ["Playfair Display", "serif"],
+                        body: ["Noto Sans SC", "serif"],
+                        // body: ["Noto Sans SC", "sans-serif"],
+                    },
+                    borderRadius: {
+                        DEFAULT: "0.5rem",
+                        lg: "0.75rem",
+                        xl: "1rem",
+                        full: "9999px",
+                    },
+                    backgroundImage: {
+                        'tang-pattern': "url(\"data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23B73F42' fill-opacity='0.1'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E\")",
+                    }
+                },
+            },
+        };
+    </script>
+</head>
+
+
+<body class="bg-background-light dark:bg-background-dark font-body text-text-light dark:text-text-dark bg-tang-pattern">
+<div class="flex flex-col min-h-screen bg-background-light/95 dark:bg-background-dark/95">
+    <header class="sticky top-0 z-10 bg-background-light/80 dark:bg-background-dark/80 backdrop-blur-sm border-b border-subtle-light dark:border-subtle-dark">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-16">
+
+                <div class="flex items-center gap-3">
+                    <svg class="h-8 w-8 text-secondary" fill="currentColor" viewBox="0 0 24 24"
+                         xmlns="http://www.w3.org/2000/svg">
+                        <path d="M12 2L1 6.5V17.5L12 22L23 17.5V6.5L12 2ZM11 12.44L4 8.5V16.34L11 20.24V12.44ZM13 12.44V20.24L20 16.34V8.5L13 12.44ZM12 4.1L18.93 7.5L12 10.9L5.07 7.5L12 4.1Z"></path>
+                    </svg>
+                    <h1 onclick="window.location.href='home_screen.html'"
+                        class="text-2xl font-bold tracking-tight font-serif-sc text-primary cursor-pointer">Xinuo
+                        Zhou</h1>
+                </div>
+
+
+                <nav class="hidden md:flex items-center space-x-8">
+                    <a onclick="window.location.href='about_me.html'"
+                       class="text-text-secondary hover:text-primary transition-colors font-medium cursor-pointer">About
+                        me</a>
+                    <a onclick="window.location.href='project_showcase.html'"
+                       class="text-secondary font-semibold cursor-pointer">Projects</a>
+                    <a onclick="window.location.href='contact_me.html'"
+                       class="text-text-secondary hover:text-primary transition-colors font-medium cursor-pointer">Contact</a>
+                </nav>
+
+                <button popovertarget="mobile-menu"
+                        class="md:hidden p-2 rounded-md text-text-secondary hover:text-primary hover:bg-primary/10 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-primary">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"
+                         xmlns="http://www.w3.org/2000/svg">
+                        <path d="M4 6h16M4 12h16M4 18h16" stroke-linecap="round" stroke-linejoin="round"
+                              stroke-width="2"></path>
+                    </svg>
+                </button>
+
+                <div id="mobile-menu" popover
+                     class="md:hidden m-0 mt-2 p-4 bg-background-light border border-base rounded-lg shadow-lg w-48">
+                    <nav class="flex flex-col gap-4">
+                        <a onclick="window.location.href='about_me.html'"
+                           class="text-text-secondary hover:text-primary transition-colors font-medium cursor-pointer">About
+                            me</a>
+                        <a onclick="window.location.href='project_showcase.html'"
+                           class="text-secondary font-semibold cursor-pointer">Projects</a>
+                        <a onclick="window.location.href='contact_me.html'"
+                           class="text-text-secondary hover:text-primary transition-colors font-medium cursor-pointer">Contact</a>
+                    </nav>
+                </div>
+
+            </div>
+        </div>
+    </header>
+
+    <main class="flex-grow container mx-auto px-4 sm:px-6 lg:px-8 py-16">
+
+        <h3 class="text-2xl font-display font-bold mb-6 text-secondary">Resume</h3>
+
+        <!-- PDF 嵌入容器（响应式） -->
+        <div class="w-full max-w-4xl mx-auto bg-white dark:bg-gray-900 rounded-xl shadow-lg overflow-hidden border border-gray-200 dark:border-gray-800">
+            <iframe class="pdf" src="Xinuo%20Zhou_CV_uxd.pdf" width="800" height="500"></iframe>
+        </div>
+
+    </main>
+</div>
+</body>
+
+
+</html>
