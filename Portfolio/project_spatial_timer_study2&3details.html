@@ -144,6 +144,7 @@
                 </div>
             </div>
             <div class="md:col-span-2 space-y-12">
+
                 <section>
 
 
@@ -168,22 +169,26 @@
                             and inefficient.
                         </p>
                         <p>
-                            To overcome these limitations, I designed a <strong class="text-primary">Spatial Timer</strong> using
+                            To overcome these limitations, I designed a <strong class="text-primary">Spatial
+                            Timer</strong> using
                             Augmented Reality (AR). This transforms the concept of a timer from a 2D display
                             into a 3D virtual object you can place anywhere in your physical space. Key features
                             include:
                         </p>
                         <ul class="list-disc list-inside pl-4 space-y-2">
                             <li>
-                                <strong class="text-primary">Spatial Mapping:</strong> Linking time information directly to specific
+                                <strong class="text-primary">Spatial Mapping:</strong> Linking time information directly
+                                to specific
                                 tasks or locations in the real world.
                             </li>
                             <li>
-                                <strong class="text-primary" >Spatial Interaction:</strong> Using natural hand gestures to control
+                                <strong class="text-primary">Spatial Interaction:</strong> Using natural hand gestures
+                                to control
                                 timers without touching a device.
                             </li>
                             <li>
-                                <strong class="text-primary">Multi-Timer Collaboration:</strong> Effortlessly creating and managing
+                                <strong class="text-primary">Multi-Timer Collaboration:</strong> Effortlessly creating
+                                and managing
                                 multiple timers at once to handle complex, parallel tasks.
                             </li>
                         </ul>
@@ -194,147 +199,10 @@
                     </div>
                 </section>
 
-
-<!--                <section x-data="{-->
-<!--                                open: false,-->
-<!--                                activeIndex: 0, //-->
-<!--                                modalImage: '',-->
-
-<!--                                images: [-->
-<!--                                    'prototype1.png',-->
-<!--                                    'prototype2.png',-->
-<!--                                    'prototype3.png',-->
-
-<!--                            &lt;!&ndash;        'https://via.placeholder.com/800x600/FFD700/FFFFFF?text=Case+Study+Image+1',&ndash;&gt;-->
-<!--                            &lt;!&ndash;        'https://via.placeholder.com/800x600/FFA07A/FFFFFF?text=Case+Study+Image+2',&ndash;&gt;-->
-<!--                            &lt;!&ndash;        'https://via.placeholder.com/800x600/98FB98/FFFFFF?text=Case+Study+Image+3',&ndash;&gt;-->
-<!--                            &lt;!&ndash;        'https://via.placeholder.com/800x600/ADD8E6/FFFFFF?text=Case+Study+Image+4'&ndash;&gt;-->
-<!--                                ],-->
-<!--                                init() {-->
-
-<!--                                    this.modalImage = this.images[this.activeIndex];-->
-<!--                                },-->
-<!--                                showImage(index) {-->
-<!--                                    this.activeIndex = index;-->
-<!--                                    this.modalImage = this.images[index];-->
-<!--                                    this.open = true;-->
-<!--                                },-->
-<!--                                nextImage() {-->
-<!--                                    this.activeIndex = (this.activeIndex + 1) % this.images.length;-->
-<!--                                    this.modalImage = this.images[this.activeIndex];-->
-<!--                                },-->
-<!--                                prevImage() {-->
-<!--                                    this.activeIndex = (this.activeIndex - 1 + this.images.length) % this.images.length;-->
-<!--                                    this.modalImage = this.images[this.activeIndex];-->
-<!--                                }-->
-<!--                            }">-->
-<!--                    <h3 class="text-2xl font-display font-bold mb-4 text-secondary">Figma version</h3>-->
-<!--                    <div class="relative w-full max-w-md mx-auto mt-10 p-4 bg-background-light/100 shadow-xl rounded-xl ">-->
-<!--                        <img :src="images[activeIndex]"-->
-<!--                             @click="showImage(activeIndex)"-->
-<!--                             alt="Exploring AR Technology in Kitchen"-->
-<!--                             class="w-full rounded-lg cursor-pointer transition-transform duration-300 hover:scale-[1.01]"/>-->
-
-<!--                        <div class="absolute bottom-4 left-1/2 -translate-x-1/2 flex space-x-2">-->
-<!--                            <template x-for="(img, idx) in images" :key="idx">-->
-<!--                                            <span @click="showImage(idx)"-->
-<!--                                                  class="w-3 h-3 rounded-full bg-gray-400 cursor-pointer"-->
-<!--                                                  :class="{ 'bg-primary': activeIndex === idx }"></span>-->
-<!--                            </template>-->
-<!--                        </div>-->
-
-<!--                        <button @click="prevImage()"-->
-<!--                                class="absolute left-2 top-1/2 -translate-y-1/2 text-gray-700 bg-white/70 hover:bg-white rounded-full p-2 shadow-md transition-colors">-->
-<!--                            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">-->
-<!--                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"-->
-<!--                                      d="M15 19l-7-7 7-7"></path>-->
-<!--                            </svg>-->
-<!--                        </button>-->
-<!--                        <button @click="nextImage()"-->
-<!--                                class="absolute right-2 top-1/2 -translate-y-1/2 text-gray-700 bg-white/70 hover:bg-white rounded-full p-2 shadow-md transition-colors">-->
-<!--                            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">-->
-<!--                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"-->
-<!--                                      d="M9 5l7 7-7 7"></path>-->
-<!--                            </svg>-->
-<!--                        </button>-->
-<!--                    </div>-->
-
-<!--                    <div x-show="open"-->
-<!--                         @keydown.escape.window="open = false"-->
-<!--                         @keydown.arrow-right.prevent.window="nextImage()"-->
-<!--                         @keydown.arrow-left.prevent.window="prevImage()"-->
-<!--                         class="fixed inset-0 z-[9999] flex items-center justify-center bg-black/80 backdrop-blur-sm"-->
-<!--                         style="display: none;" x-cloak>-->
-
-<!--                        <div @click.away="open = false"-->
-<!--                             class="relative max-w-[calc(100vw/2)] max-h-[calc(100vh/2)] mx-4">-->
-<!--                            <img :src="modalImage" alt="Enlarged view"-->
-<!--                                 class="w-full h-full object-contain rounded-lg shadow-2xl"/>-->
-
-<!--                            <button @click="open = false"-->
-<!--                                    class="absolute -top-4 -right-4 text-white bg-secondary/70 hover:bg-secondary rounded-full p-2 shadow-lg z-10">-->
-<!--                                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">-->
-<!--                                    <path d="M6 18L18 6M6 6l12 12" stroke-linecap="round" stroke-linejoin="round"-->
-<!--                                          stroke-width="2"></path>-->
-<!--                                </svg>-->
-<!--                            </button>-->
-
-<!--                            <button @click="prevImage()"-->
-<!--                                    class="absolute left-4 top-1/2 -translate-y-1/2 text-white bg-black/40 hover:bg-black/60 rounded-full p-3 shadow-lg transition-colors">-->
-<!--                                <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">-->
-<!--                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"-->
-<!--                                          d="M15 19l-7-7 7-7"></path>-->
-<!--                                </svg>-->
-<!--                            </button>-->
-<!--                            <button @click="nextImage()"-->
-<!--                                    class="absolute right-4 top-1/2 -translate-y-1/2 text-white bg-black/40 hover:bg-black/60 rounded-full p-3 shadow-lg transition-colors">-->
-<!--                                <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">-->
-<!--                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"-->
-<!--                                          d="M9 5l7 7-7 7"></path>-->
-<!--                                </svg>-->
-<!--                            </button>-->
-<!--                        </div>-->
-
-<!--                    </div>-->
-<!--                    &lt;!&ndash;                                                <div class="relative w-full mx-auto">&ndash;&gt;-->
-<!--                    <div class="text-2xl font-display font-bold mb-4 text-secondary"></div>-->
-
-<!--                    <p class="text-lg leading-relaxed text-text-light/90 dark:text-text-dark/90 mb-6 font-body">-->
-<!--                        Spatial Timer Panel Function Time management is Spatial Timer's primary purpose. I-->
-<!--                        concentrated on timer basics and included the following features throughout the design.-->
-
-<!--                    </p>-->
-<!--                    <ol class="list-none space-y-4 text-lg leading-relaxed text-text-light/90 dark:text-text-dark/90 font-body">-->
-<!--                        <li class="flex items-start"><span-->
-<!--                                class="text-light font-bold mr-3"> • </span><span><strong class="text-primary">Time Input: </strong> A digital keyboard allows minute-level time input. The numeric keypad’s-->
-<!--                                                                                    nine panels make numbers easy to find and input.</span>-->
-<!--                        </li>-->
-<!--                        <li class="flex items-start"><span-->
-<!--                                class="text-light font-bold mr-3"> • </span><span><strong class="text-primary">Clear Buttons: </strong> Users can correct entry errors or alter timer length by clicking Clear.</span>-->
-<!--                        </li>-->
-<!--                        <li class="flex items-start"><span-->
-<!--                                class="text-light font-bold mr-3"> • </span><span><strong class="text-primary">Start/Restart buttons:</strong>Tap Start to start the countdown and jump to the countdown-->
-<!--                                                                                    screen after setting the time. Restarting the countdown starts from scratch. </span>-->
-<!--                        </li>-->
-<!--                        <li class="flex items-start"><span-->
-<!--                                class="text-light font-bold mr-3"> • </span><span><strong class="text-primary">Pause/Resume buttons:</strong>Clicking the stop and resume buttons pauses and resumes the-->
-<!--                                                                                    process.</span>-->
-<!--                        </li>-->
-<!--                        <li class="flex items-start"><span-->
-<!--                                class="text-light font-bold mr-3"> • </span><span><strong class="text-primary">Toggle buttons:</strong> Users may choose between round and slider countdown panels.</span>-->
-<!--                        </li>-->
-<!--                        <li class="flex items-start"><span-->
-<!--                                class="text-light font-bold mr-3"> • </span><span><strong class="text-primary">Delete buttons:</strong> Remove timers when no longer required to improve space layout.</span>-->
-<!--                        </li>-->
-
-
-<!--                    </ol>-->
-
-<!--                </section>-->
-
-                <!-- 建议放在全局样式里一次即可：隐藏带 x-cloak 的元素直到 Alpine 就绪 -->
                 <style>
-                    [x-cloak] { display: none !important; }
+                    [x-cloak] {
+                        display: none !important;
+                    }
                 </style>
 
                 <section
@@ -376,7 +244,7 @@
                                 :src="images[activeIndex]"
                                 @click="showImage(activeIndex)"
                                 :alt='`Preview image ${activeIndex + 1}`'
-                                class="w-full rounded-lg cursor-pointer transition-transform duration-300 hover:scale-[1.01]" />
+                                class="w-full rounded-lg cursor-pointer transition-transform duration-300 hover:scale-[1.01]"/>
 
                         <!-- 圆点导航 -->
                         <div class="absolute bottom-4 left-1/2 -translate-x-1/2 flex space-x-2">
@@ -395,8 +263,10 @@
                                 type="button"
                                 @click="prevImage()"
                                 class="absolute left-2 top-1/2 -translate-y-1/2 text-gray-700 bg-white/70 hover:bg-white rounded-full p-2 shadow-md transition">
-                            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path>
+                            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"
+                                 aria-hidden="true">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                      d="M15 19l-7-7 7-7"></path>
                             </svg>
                             <span class="sr-only">Previous image</span>
                         </button>
@@ -404,8 +274,10 @@
                                 type="button"
                                 @click="nextImage()"
                                 class="absolute right-2 top-1/2 -translate-y-1/2 text-gray-700 bg-white/70 hover:bg-white rounded-full p-2 shadow-md transition">
-                            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+                            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"
+                                 aria-hidden="true">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                      d="M9 5l7 7-7 7"></path>
                             </svg>
                             <span class="sr-only">Next image</span>
                         </button>
@@ -432,15 +304,17 @@
                             <img
                                     :src="modalImage"
                                     :alt='`Enlarged image ${activeIndex + 1}`'
-                                    class="max-w-[95vw] max-h-[90vh] w-auto h-auto object-contain rounded-lg shadow-2xl" />
+                                    class="max-w-[95vw] max-h-[90vh] w-auto h-auto object-contain rounded-lg shadow-2xl"/>
 
                             <!-- 关闭按钮 -->
                             <button
                                     type="button"
                                     @click="open = false"
                                     class="absolute -top-4 -right-4 text-white bg-secondary/70 hover:bg-secondary rounded-full p-2 shadow-lg z-10">
-                                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
-                                    <path d="M6 18L18 6M6 6l12 12" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
+                                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"
+                                     aria-hidden="true">
+                                    <path d="M6 18L18 6M6 6l12 12" stroke-linecap="round" stroke-linejoin="round"
+                                          stroke-width="2"></path>
                                 </svg>
                                 <span class="sr-only">Close</span>
                             </button>
@@ -450,8 +324,10 @@
                                     type="button"
                                     @click="prevImage()"
                                     class="absolute left-4 top-1/2 -translate-y-1/2 text-white bg-black/40 hover:bg-black/60 rounded-full p-3 shadow-lg transition">
-                                <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path>
+                                <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"
+                                     aria-hidden="true">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                          d="M15 19l-7-7 7-7"></path>
                                 </svg>
                                 <span class="sr-only">Previous</span>
                             </button>
@@ -459,8 +335,10 @@
                                     type="button"
                                     @click="nextImage()"
                                     class="absolute right-4 top-1/2 -translate-y-1/2 text-white bg-black/40 hover:bg-black/60 rounded-full p-3 shadow-lg transition">
-                                <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+                                <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"
+                                     aria-hidden="true">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                          d="M9 5l7 7-7 7"></path>
                                 </svg>
                                 <span class="sr-only">Next</span>
                             </button>
@@ -468,9 +346,11 @@
                     </div>
 
                     <!-- 文案 & 功能点 -->
-                    <div class="text-xl font-display font-bold mt-8 mb-4 text-secondary">Spatial Timer – Key Functions</div>
+                    <div class="text-xl font-display font-bold mt-8 mb-4 text-secondary">Spatial Timer – Key Functions
+                    </div>
                     <p class="text-lg leading-relaxed text-text-light/90 dark:text-text-dark/90 mb-6 font-body">
-                        Spatial Timer Panel Function — time management is the primary purpose. I focused on the timer basics and included:
+                        Spatial Timer Panel Function — time management is the primary purpose. I focused on the timer
+                        basics and included:
                     </p>
                     <ol class="list-none space-y-4 text-lg leading-relaxed text-text-light/90 dark:text-text-dark/90 font-body">
                         <li class="flex items-start">
@@ -501,7 +381,9 @@
                 </section>
 
                 <!-- 建议全局一次：隐藏 x-cloak -->
-                <style>[x-cloak]{display:none!important}</style>
+                <style>[x-cloak] {
+                    display: none !important
+                }</style>
 
                 <section
                         x-data="{
@@ -523,7 +405,7 @@
                                 :src="images[activeIndex]"
                                 @click="showImage(activeIndex)"
                                 alt="Unity 2D preview"
-                                class="w-full rounded-lg cursor-pointer transition-transform duration-300 hover:scale-[1.01]" />
+                                class="w-full rounded-lg cursor-pointer transition-transform duration-300 hover:scale-[1.01]"/>
 
                         <!-- 圆点导航 -->
                         <div class="absolute bottom-4 left-1/2 -translate-x-1/2 flex space-x-2">
@@ -540,12 +422,18 @@
                         <!-- 左右切换（缩略图区域） -->
                         <button type="button" @click="prevImage()"
                                 class="absolute left-2 top-1/2 -translate-y-1/2 text-gray-700 bg-white/70 hover:bg-white rounded-full p-2 shadow-md transition-colors">
-                            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path></svg>
+                            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                      d="M15 19l-7-7 7-7"></path>
+                            </svg>
                             <span class="sr-only">Previous</span>
                         </button>
                         <button type="button" @click="nextImage()"
                                 class="absolute right-2 top-1/2 -translate-y-1/2 text-gray-700 bg-white/70 hover:bg-white rounded-full p-2 shadow-md transition-colors">
-                            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path></svg>
+                            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                      d="M9 5l7 7-7 7"></path>
+                            </svg>
                             <span class="sr-only">Next</span>
                         </button>
                     </div>
@@ -560,13 +448,14 @@
                         <div @click.away="open=false" class="relative mx-4">
                             <!-- 关键：用最大宽高限制 + 自适应，保持比例 -->
                             <img :src="modalImage" alt="Enlarged view"
-                                 class="max-w-[95vw] max-h-[90vh] w-auto h-auto object-contain rounded-lg shadow-2xl" />
+                                 class="max-w-[95vw] max-h-[90vh] w-auto h-auto object-contain rounded-lg shadow-2xl"/>
 
                             <!-- 关闭按钮 -->
                             <button type="button" @click="open=false"
                                     class="absolute -top-4 -right-4 text-white bg-secondary/70 hover:bg-secondary rounded-full p-2 shadow-lg z-10">
                                 <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                    <path d="M6 18L18 6M6 6l12 12" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
+                                    <path d="M6 18L18 6M6 6l12 12" stroke-linecap="round" stroke-linejoin="round"
+                                          stroke-width="2"></path>
                                 </svg>
                                 <span class="sr-only">Close</span>
                             </button>
@@ -575,14 +464,16 @@
                             <button type="button" @click="prevImage()"
                                     class="absolute left-4 top-1/2 -translate-y-1/2 text-white bg-black/40 hover:bg-black/60 rounded-full p-3 shadow-lg transition-colors">
                                 <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path>
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                          d="M15 19l-7-7 7-7"></path>
                                 </svg>
                                 <span class="sr-only">Previous</span>
                             </button>
                             <button type="button" @click="nextImage()"
                                     class="absolute right-4 top-1/2 -translate-y-1/2 text-white bg-black/40 hover:bg-black/60 rounded-full p-3 shadow-lg transition-colors">
                                 <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                          d="M9 5l7 7-7 7"></path>
                                 </svg>
                                 <span class="sr-only">Next</span>
                             </button>
@@ -592,7 +483,9 @@
 
 
                 <!-- 若全局还没加，建议在<head>或全局样式里添加一次 -->
-                <style>[x-cloak]{display:none!important}</style>
+                <style>[x-cloak] {
+                    display: none !important
+                }</style>
 
                 <section
                         x-data="{
@@ -613,7 +506,7 @@
                                 :src="images[activeIndex]"
                                 @click="showImage(activeIndex)"
                                 alt="Exploring AR Technology in Kitchen"
-                                class="w-full rounded-lg cursor-pointer transition-transform duration-300 hover:scale-[1.01]" />
+                                class="w-full rounded-lg cursor-pointer transition-transform duration-300 hover:scale-[1.01]"/>
 
                         <!-- 圆点导航 -->
                         <div class="absolute bottom-4 left-1/2 -translate-x-1/2 flex space-x-2">
@@ -630,12 +523,18 @@
                         <!-- 左右切换（缩略图区域） -->
                         <button type="button" @click="prevImage()"
                                 class="absolute left-2 top-1/2 -translate-y-1/2 text-gray-700 bg-white/70 hover:bg-white rounded-full p-2 shadow-md transition-colors">
-                            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path></svg>
+                            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                      d="M15 19l-7-7 7-7"></path>
+                            </svg>
                             <span class="sr-only">Previous</span>
                         </button>
                         <button type="button" @click="nextImage()"
                                 class="absolute right-2 top-1/2 -translate-y-1/2 text-gray-700 bg-white/70 hover:bg-white rounded-full p-2 shadow-md transition-colors">
-                            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path></svg>
+                            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                      d="M9 5l7 7-7 7"></path>
+                            </svg>
                             <span class="sr-only">Next</span>
                         </button>
                     </div>
@@ -649,13 +548,14 @@
                         <div @click.away="open=false" class="relative mx-4">
                             <!-- 关键：用最大宽高限制 + 自适应，保持比例 -->
                             <img :src="modalImage" alt="Enlarged view"
-                                 class="max-w-[95vw] max-h-[90vh] w-auto h-auto object-contain rounded-lg shadow-2xl" />
+                                 class="max-w-[95vw] max-h-[90vh] w-auto h-auto object-contain rounded-lg shadow-2xl"/>
 
                             <!-- 关闭按钮 -->
                             <button type="button" @click="open=false"
                                     class="absolute -top-4 -right-4 text-white bg-secondary/70 hover:bg-secondary rounded-full p-2 shadow-lg z-10">
                                 <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                    <path d="M6 18L18 6M6 6l12 12" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
+                                    <path d="M6 18L18 6M6 6l12 12" stroke-linecap="round" stroke-linejoin="round"
+                                          stroke-width="2"></path>
                                 </svg>
                                 <span class="sr-only">Close</span>
                             </button>
@@ -664,34 +564,22 @@
                             <button type="button" @click="prevImage()"
                                     class="absolute left-4 top-1/2 -translate-y-1/2 text-white bg-black/40 hover:bg-black/60 rounded-full p-3 shadow-lg transition-colors">
                                 <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path>
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                          d="M15 19l-7-7 7-7"></path>
                                 </svg>
                                 <span class="sr-only">Previous</span>
                             </button>
                             <button type="button" @click="nextImage()"
                                     class="absolute right-4 top-1/2 -translate-y-1/2 text-white bg-black/40 hover:bg-black/60 rounded-full p-3 shadow-lg transition-colors">
                                 <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                          d="M9 5l7 7-7 7"></path>
                                 </svg>
                                 <span class="sr-only">Next</span>
                             </button>
                         </div>
                     </div>
 
-                    <!-- 下面你的文案保持不变 -->
-                    <div class="text-2xl font-display font-bold mb-4 text-secondary mt-8"></div>
-                    <p class="text-lg leading-relaxed text-text-light/90 dark:text-text-dark/90 mb-6 font-body">
-                        Interactive Function Spatial Timer's gesture-based time management is innovative. In a
-                        three-dimensional environment, motions make timer generation, manipulation, and management
-                        easier. I created these primary gesture interactions:
-                    </p>
-                    <ol class="list-none space-y-4 text-lg leading-relaxed text-text-light/90 dark:text-text-dark/90 font-body">
-                        <li class="flex items-start"><span class="text-light font-bold mr-3"> • </span><span><strong class="text-primary">Generate Timer: </strong> Our gesture was inspired by the British Sign Language "timer" Bsl (2013). Four fingers are bent to the same degree, but the thumb is bent somewhat differently. The user can generate a timer in the surrounding environment by performing this action.</span></li>
-                        <li class="flex items-start"><span class="text-light font-bold mr-3"> • </span><span><strong class="text-primary">Shift: </strong> Grab and drag movements move the timer anywhere in the space.</span></li>
-                        <li class="flex items-start"><span class="text-light font-bold mr-3"> • </span><span><strong class="text-primary">Zooming: </strong> Users may instantly reduce or enlarge the timer to fit various spaces using pinch and open actions.</span></li>
-                        <li class="flex items-start"><span class="text-light font-bold mr-3"> • </span><span><strong class="text-primary">Rotation:</strong> To improve timer spatial orientation, the user may squeeze one of the anchor points to rotate the timer at any angle around its vertical (Y-axis) and horizontal (X-axis) axes.</span></li>
-                        <li class="flex items-start"><span class="text-light font-bold mr-3"> • </span><span><strong class="text-primary">Time panel: </strong> Users may touch or poke the timer panel buttons to start, stop, reset, and swap timer forms.</span></li>
-                    </ol>
                 </section>
 
 
@@ -707,19 +595,22 @@
 
                     <div class="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
                         <!-- 1. Generate Timer -->
-                        <article class="group relative overflow-hidden rounded-xl border border-subtle-light bg-white/70 dark:bg-background-dark/60 p-4 shadow-sm hover:shadow-xl hover:border-accent/50 transition">
+                        <article
+                                class="group relative overflow-hidden rounded-xl border border-subtle-light bg-white/70 dark:bg-background-dark/60 p-4 shadow-sm hover:shadow-xl hover:border-accent/50 transition">
                             <div class="flex items-start gap-3">
                                 <!-- icon -->
                                 <span class="shrink-0 inline-flex h-10 w-10 items-center justify-center rounded-xl bg-accent/15 text-accent">
           <!-- spark icon -->
           <svg class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m12 3 1.5 4.5L18 9l-4.5 1.5L12 15l-1.5-4.5L6 9l4.5-1.5L12 3z"/>
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                  d="m12 3 1.5 4.5L18 9l-4.5 1.5L12 15l-1.5-4.5L6 9l4.5-1.5L12 3z"/>
           </svg>
         </span>
                                 <div>
                                     <h5 class="font-semibold text-primary">Generate Timer</h5>
                                     <p class="text-sm text-primary/80">
-                                        Inspired by BSL "timer" (2013). Perform the hand pose to spawn a timer in your surroundings.
+                                        Inspired by BSL "timer" (2013). Perform the hand pose to spawn a timer in your
+                                        surroundings.
                                     </p>
                                 </div>
                             </div>
@@ -729,17 +620,20 @@
                         </article>
 
                         <!-- 2. Shift -->
-                        <article class="group relative overflow-hidden rounded-xl border border-subtle-light bg-white/70 dark:bg-background-dark/60 p-4 shadow-sm hover:shadow-xl hover:border-accent/50 transition">
+                        <article
+                                class="group relative overflow-hidden rounded-xl border border-subtle-light bg-white/70 dark:bg-background-dark/60 p-4 shadow-sm hover:shadow-xl hover:border-accent/50 transition">
                             <div class="flex items-start gap-3">
         <span class="shrink-0 inline-flex h-10 w-10 items-center justify-center rounded-xl bg-success/15 text-success">
           <!-- hand move icon -->
           <svg class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v3m0 12v3m9-9h-3M6 12H3m12.5-4.5L12 9l-3.5-1.5M15.5 16.5 12 15l-3.5 1.5"/>
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                  d="M12 3v3m0 12v3m9-9h-3M6 12H3m12.5-4.5L12 9l-3.5-1.5M15.5 16.5 12 15l-3.5 1.5"/>
           </svg>
         </span>
                                 <div>
                                     <h5 class="font-semibold text-primary">Shift</h5>
-                                    <p class="text-sm text-primary/80">Grab & drag to place the timer anywhere in space.</p>
+                                    <p class="text-sm text-primary/80">Grab & drag to place the timer anywhere in
+                                        space.</p>
                                 </div>
                             </div>
                             <img src="AR6.png" alt="Shift gesture preview"
@@ -747,17 +641,20 @@
                         </article>
 
                         <!-- 3. Zooming -->
-                        <article class="group relative overflow-hidden rounded-xl border border-subtle-light bg-white/70 dark:bg-background-dark/60 p-4 shadow-sm hover:shadow-xl hover:border-accent/50 transition">
+                        <article
+                                class="group relative overflow-hidden rounded-xl border border-subtle-light bg-white/70 dark:bg-background-dark/60 p-4 shadow-sm hover:shadow-xl hover:border-accent/50 transition">
                             <div class="flex items-start gap-3">
         <span class="shrink-0 inline-flex h-10 w-10 items-center justify-center rounded-xl bg-primary/10 text-primary">
           <!-- pinch icon -->
           <svg class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-            <path stroke-width="2" stroke-linecap="round" stroke-linejoin="round" d="M9 9l-3-3m0 0h3m-3 0v3M15 15l3 3m0 0h-3m3 0v-3M8 16l8-8"/>
+            <path stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                  d="M9 9l-3-3m0 0h3m-3 0v3M15 15l3 3m0 0h-3m3 0v-3M8 16l8-8"/>
           </svg>
         </span>
                                 <div>
                                     <h5 class="font-semibold text-primary">Zooming</h5>
-                                    <p class="text-sm text-primary/80">Pinch to shrink, spread to enlarge—fit any context quickly.</p>
+                                    <p class="text-sm text-primary/80">Pinch to shrink, spread to enlarge—fit any
+                                        context quickly.</p>
                                 </div>
                             </div>
                             <img src="AR2.jpg" alt="Zoom gesture preview"
@@ -765,70 +662,31 @@
                         </article>
 
                         <!-- 4. Rotation -->
-                        <article class="group relative overflow-hidden rounded-xl border border-subtle-light bg-white/70 dark:bg-background-dark/60 p-4 shadow-sm hover:shadow-xl hover:border-accent/50 transition">
+                        <article
+                                class="group relative overflow-hidden rounded-xl border border-subtle-light bg-white/70 dark:bg-background-dark/60 p-4 shadow-sm hover:shadow-xl hover:border-accent/50 transition">
                             <div class="flex items-start gap-3">
         <span class="shrink-0 inline-flex h-10 w-10 items-center justify-center rounded-xl bg-secondary/15 text-secondary">
           <!-- rotate icon -->
           <svg class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-            <path stroke-width="2" stroke-linecap="round" stroke-linejoin="round" d="M4 4v6h6M20 20v-6h-6M20 8A8 8 0 0 0 8 20"/>
+            <path stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                  d="M4 4v6h6M20 20v-6h-6M20 8A8 8 0 0 0 8 20"/>
           </svg>
         </span>
                                 <div>
                                     <h5 class="font-semibold text-primary">Rotation</h5>
-                                    <p class="text-sm text-primary/80">Rotate around X/Y by grabbing anchors for perfect orientation.</p>
+                                    <p class="text-sm text-primary/80">Rotate around X/Y by grabbing anchors for perfect
+                                        orientation.</p>
                                 </div>
                             </div>
                             <img src="AR5.png" alt="Rotate gesture preview"
                                  class="mt-4 h-28 w-full rounded-lg object-cover ring-1 ring-subtle-light/60 transition group-hover:scale-[1.02] group-hover:ring-accent/40">
                         </article>
 
-                        <!-- 5. Time Panel -->
-                        <article class="group relative overflow-hidden rounded-xl border border-subtle-light bg-white/70 dark:bg-background-dark/60 p-4 shadow-sm hover:shadow-xl hover:border-accent/50 transition sm:col-span-2 lg:col-span-1">
-                            <div class="flex items-start gap-3">
-        <span class="shrink-0 inline-flex h-10 w-10 items-center justify-center rounded-xl bg-text-light/10 text-text-light dark:bg-text-dark/15 dark:text-text-dark">
-          <!-- panel icon -->
-          <svg class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-            <rect x="3" y="4" width="18" height="6" rx="1.5" stroke-width="2"/>
-            <rect x="3" y="12" width="18" height="8" rx="1.5" stroke-width="2"/>
-            <path d="M6 7h4M6 15h6M14 15h4" stroke-width="2" stroke-linecap="round"/>
-          </svg>
-        </span>
-                                <div>
-                                    <h5 class="font-semibold text-primary">Time Panel</h5>
-                                    <p class="text-sm text-primary/80">Tap to start / pause / reset; toggle circular or slider modes.</p>
-                                </div>
-                            </div>
-                            <div class="mt-4 grid grid-cols-3 gap-2">
-<!--                                <img src="AR1.jpg" class="h-20 w-full rounded-lg object-cover ring-1 ring-subtle-light/60" alt="">-->
-<!--                                <img src="AR2.jpg" class="h-20 w-full rounded-lg object-cover ring-1 ring-subtle-light/60" alt="">-->
-                                <img src="AR3.jpg" class="h-20 w-full rounded-lg object-cover ring-1 ring-subtle-light/60" alt="">
-                            </div>
+
                         </article>
                     </div>
 
-                    <!-- 小提示 + 链接到上面的可放大相册（如果在同页） -->
-<!--                    <div class="mt-6 flex items-center justify-between">-->
-<!--                        <p class="text-sm text-primary/70">-->
-<!--                            Tip: Hover cards to preview. Click images in the gallery above to view full-screen details.-->
-<!--                        </p>-->
-<!--                        <a href="#top-gallery" class="text-sm font-semibold text-accent hover:underline">See full gallery →</a>-->
-<!--                    </div>-->
                 </section>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
                 <section
@@ -871,21 +729,32 @@
                                     <source :src="videos[vActive].src" type="video/mp4">
                                 </template>
                                 <template x-if="videos[vActive].vtt">
-                                    <track kind="captions" :src="videos[vActive].vtt" srclang="en" label="English" default>
+                                    <track kind="captions" :src="videos[vActive].vtt" srclang="en" label="English"
+                                           default>
                                 </template>
                                 Your browser does not support HTML5 video.
                             </video>
 
-<!--                            https://youtube.com/shorts/KwfpNh1fHKQ-->
+                            <!--                            https://youtube.com/shorts/KwfpNh1fHKQ-->
                         </div>
 
                         <!-- 标题/说明 -->
                         <div class="mt-3 flex items-center justify-between gap-3">
-                            <p class="text-sm md:text-base font-medium text-text-light/80 dark:text-text-dark/80" x-text="videos[vActive].caption"></p>
+                            <p class="text-sm md:text-base font-medium text-text-light/80 dark:text-text-dark/80"
+                               x-text="videos[vActive].caption"></p>
                             <div class="flex items-center gap-2">
-                                <button @click="vPrev()" class="px-3 py-1 rounded-md bg-background-light hover:bg-primary/10 text-primary font-medium transition">Prev</button>
-                                <button @click="vShow(vActive)" class="px-3 py-1 rounded-md bg-secondary text-white font-semibold shadow hover:opacity-95 transition">Fullscreen</button>
-                                <button @click="vNext()" class="px-3 py-1 rounded-md bg-background-light hover:bg-primary/10 text-primary font-medium transition">Next</button>
+                                <button @click="vPrev()"
+                                        class="px-3 py-1 rounded-md bg-background-light hover:bg-primary/10 text-primary font-medium transition">
+                                    Prev
+                                </button>
+                                <button @click="vShow(vActive)"
+                                        class="px-3 py-1 rounded-md bg-secondary text-white font-semibold shadow hover:opacity-95 transition">
+                                    Fullscreen
+                                </button>
+                                <button @click="vNext()"
+                                        class="px-3 py-1 rounded-md bg-background-light hover:bg-primary/10 text-primary font-medium transition">
+                                    Next
+                                </button>
                             </div>
                         </div>
 
@@ -932,143 +801,325 @@
                             <button @click="vOpen=false"
                                     class="absolute -top-4 -right-4 text-white bg-secondary/70 hover:bg-secondary rounded-full p-2 shadow-lg z-10">
                                 <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                    <path d="M6 18L18 6M6 6l12 12" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
+                                    <path d="M6 18L18 6M6 6l12 12" stroke-linecap="round" stroke-linejoin="round"
+                                          stroke-width="2"></path>
                                 </svg>
                             </button>
 
                             <button @click="vPrev()"
                                     class="absolute left-4 top-1/2 -translate-y-1/2 text-white bg-black/40 hover:bg-black/60 rounded-full p-3 shadow-lg">
                                 <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path>
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                          d="M15 19l-7-7 7-7"></path>
                                 </svg>
                             </button>
                             <button @click="vNext()"
                                     class="absolute right-4 top-1/2 -translate-y-1/2 text-white bg-black/40 hover:bg-black/60 rounded-full p-3 shadow-lg">
                                 <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                          d="M9 5l7 7-7 7"></path>
                                 </svg>
                             </button>
                         </div>
                     </div>
                 </section>
 
-                <section>
-                    <h4 class="text-xl md:text-2xl font-display font-bold mb-4 text-secondary">Study 3 Demo Video</h4>
-                    <div class="w-full max-w-3xl mx-auto p-6 bg-background-light rounded-xl shadow-xl  ">
-                        <p class="text-lg leading-relaxed text-text-light/90 dark:text-text-dark/90 font-body">
-                            Click the link below to view the full AR multi-task scenario demonstration of Study 3:
-                        </p>
-                        <p class="mt-4 text-lg leading-relaxed font-body">
-                            <a
-                                    href="https://youtube.com/shorts/KwfpNh1fHKQ"
-                                    target="_blank"
-                                    class="text-primary underline hover:text-primary/80 transition font-medium"
-                            >
-                                https://youtube.com/shorts/KwfpNh1fHKQ
-                            </a>
-                        </p>
-                    </div>
-                </section>
+                <section class="mt-10 space-y-8" id="study-2">
 
-
-                <section>
-                    <!-- Study 2 部分 -->
-                    <div class="mb-10">
-                        <h3 class="text-2xl font-display font-bold mb-4 text-secondary">Study 2</h3>
-                        <p class="text-lg leading-relaxed text-text-light/90 dark:text-text-dark/90 font-body mb-4">
-                            <strong class="text-primary">Core Objective:</strong> Evaluate the experience and usability of users creating and interacting with Spatial Timers.
-                        </p>
-                        <p class="text-lg leading-relaxed text-text-light/90 dark:text-text-dark/90 font-body mb-4">
-                            <strong class="text-primary">Scenario Design & Implementation:</strong>
-                        </p>
-                        <ul class="list-disc pl-6 text-lg leading-relaxed text-text-light/90 dark:text-text-dark/90 font-body space-y-2">
-                            <li>Built an AR environment using OVR Camera Rig (with Passthrough function for Meta Quest) to integrate Spatial Timers with the real world.</li>
-                            <li>Deployed Spatial Timer prefabs and added debugging UI (hand model line renderers: green for valid gestures, red otherwise) to assist timer generation.</li>
-                        </ul>
-
-                        <p class="text-lg leading-relaxed text-text-light/90 dark:text-text-dark/90 font-body mb-2">
-                            <strong class="text-primary">Observation Data:</strong> System Usability Scale (SUS)
-                        </p>
-                        <ul class="list-disc pl-6 text-lg leading-relaxed text-text-light/90 dark:text-text-dark/90 font-body space-y-2">
-                            <li> Used a standardized SUS questionnaire.</li>
-                            <li> Spatial Timer and Baseline Timer (traditional) shared the same structure for comparison.</li>
-                        </ul>
-
-                        <p class="text-lg leading-relaxed text-text-light/90 dark:text-text-dark/90 font-body mb-2">
-                            <strong class="text-primary">Findings:</strong>
-                        </p>
-                        <ul class="list-disc pl-6 text-lg leading-relaxed text-text-light/90 dark:text-text-dark/90 font-body space-y-2">
-                            <li>Spatial Timer showed a slight efficiency gain in timer generation tasks.</li>
-                            <li>Challenges included spatial misalignment and inconsistent haptic/visual information.</li>
-<!--                            <li>SUS Results: Spatial Timers outperformed single-device timers.</li>-->
-                        </ul>
-
+                    <!-- 标题 + 标签 -->
+                    <div class="flex items-center gap-3 flex-wrap">
+                        <h3 class="text-3xl font-display font-bold text-secondary">Study 2</h3>
+                        <span class="rounded-full bg-success/15 text-success px-3 py-1 text-xs font-semibold">SUS Evaluation</span>
+                        <span class="rounded-full bg-accent/15 text-accent px-3 py-1 text-xs font-semibold">Meta Quest Passthrough</span>
                     </div>
 
-                        <h3 class="text-xl font-display font-bold mb-4 text-primary">Outcome</h3>
-                        <p class="text-lg leading-relaxed text-text-light/90 dark:text-text-dark/90 mb-6 font-body">
-                            SUS Results: Spatial Timers outperformed single-device timers.
+                    <!-- 顶部摘要卡 -->
+                    <div class="rounded-2xl border border-subtle-light bg-white/80 dark:bg-background-dark/60 p-6 shadow-sm">
+                        <p class="text-lg text-primary/90">
+                            <span class="font-semibold text-primary">Core Objective:</span>
+                            Evaluate the experience and usability of users creating and interacting with Spatial Timers.
                         </p>
-
-                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
-                        <div class="bg-background-light dark:bg-background-dark border-l-4 border-accent p-6 rounded-lg shadow-md">
-                            <p class="text-3xl font-bold text-accent font-display">79.43</p>
-                            <p class="mt-1 text-base font-medium font-body">Spatial Timer</p>
-                        </div>
-                        <div class="bg-background-light dark:bg-background-dark border-l-4 border-success p-6 rounded-lg shadow-md">
-                            <p class="text-3xl font-bold text-success font-display">66.02</p>
-                            <p class="mt-1 text-base font-medium font-body">Baseline Timer(phone timer)</p>
-                        </div>
-                        <div class="bg-background-light dark:bg-background-dark border-l-4 border-secondary p-6 rounded-lg sm:col-span-2 shadow-md">
-                            <p class="text-3xl font-bold text-secondary font-display">59%
-                            </p>
-                            <p class="mt-1 text-base font-medium font-body"> participants finding Spatial Timer more efficient.</p>
+                        <div class="mt-4 grid gap-3 sm:grid-cols-3">
+                            <div class="rounded-xl border border-subtle-light/70 bg-background-light/60 dark:bg-background-dark/40 p-4">
+                                <div class="text-xs uppercase tracking-wide text-primary/60">Platform</div>
+                                <div class="mt-1 font-semibold text-primary">OVR Camera Rig + Passthrough</div>
+                            </div>
+                            <div class="rounded-xl border border-subtle-light/70 bg-background-light/60 dark:bg-background-dark/40 p-4">
+                                <div class="text-xs uppercase tracking-wide text-primary/60">Task</div>
+                                <div class="mt-1 font-semibold text-primary">Create / Place / Manage Timers</div>
+                            </div>
+                            <div class="rounded-xl border border-subtle-light/70 bg-background-light/60 dark:bg-background-dark/40 p-4">
+                                <div class="text-xs uppercase tracking-wide text-primary/60">Measure</div>
+                                <div class="mt-1 font-semibold text-primary">System Usability Scale (SUS)</div>
+                            </div>
                         </div>
                     </div>
 
-                </section>
+                    <!-- SUS 对比卡：可视化差值 -->
+                    <div class="rounded-2xl border border-subtle-light bg-white/80 dark:bg-background-dark/60 p-6 shadow-sm">
+                        <div class="flex items-end justify-between gap-4 flex-wrap">
+                            <h4 class="text-xl font-display font-bold text-primary">SUS Results</h4>
+                            <div class="text-sm text-primary/70">Spatial Timer outperformed the single-device baseline.</div>
+                        </div>
 
+                        <!-- 分数条 -->
+                        <div class="mt-6 grid gap-6 sm:grid-cols-2">
+                            <!-- Spatial Timer -->
+                            <div class="rounded-xl bg-background-light/70 dark:bg-background-dark/40 p-4 ring-1 ring-subtle-light">
+                                <div class="flex items-center justify-between">
+                                    <div class="font-semibold text-primary">Spatial Timer</div>
+                                    <div class="text-2xl font-extrabold text-accent">79.43</div>
+                                </div>
+                                <div class="mt-3 h-2 w-full rounded-full bg-subtle-light/60 overflow-hidden">
+                                    <div class="h-full rounded-full bg-accent"
+                                         style="width:79.43%"></div>
+                                </div>
+                                <div class="mt-2 text-xs text-primary/60">Higher is better (0–100)</div>
+                            </div>
 
-                <section>
-                    <!-- Study 3 部分 -->
-                    <div>
-                        <h3 class="text-2xl font-display font-bold mb-4 text-accent">Study 3</h3>
-                        <p class="text-lg leading-relaxed text-text-light/90 dark:text-text-dark/90 font-body mb-4">
-                            <strong class="text-primary">Core Objective:</strong> Evaluate the effectiveness of the Spatial Timer in multi-task switching and attention management, and compare it with the traditional mobile phone timer.
-                        </p>
-                        <p class="text-lg leading-relaxed text-text-light/90 dark:text-text-dark/90 font-body mb-2">
-                            <strong class="text-primary">Scenario Design & Implementation:</strong>
-                        </p>
-                        <ul class="list-disc pl-6 text-lg leading-relaxed text-text-light/90 dark:text-text-dark/90 font-body space-y-2 mb-4">
-                            <li>Set up 5 side-by-side Spatial Timer prefabs in 3D space for multi-task scenarios, adjusting positions based on laboratory size.</li>
-                            <li>Developed "randomSelect.cs" script to randomly prompt 1 timer every minute (via sound/scale) for attention management.</li>
-                        </ul>
-                        <p class="text-lg leading-relaxed text-text-light/90 dark:text-text-dark/90 font-body mb-2">
-                            <strong class="text-primary">Observation Data:</strong> NASA TLX Score, Post-experiment Interview, Affinity Diagram with Inductive Coding
-                        </p>
-                        <ul class="list-disc pl-6 text-lg leading-relaxed text-text-light/90 dark:text-text-dark/90 font-body space-y-2 mb-4">
-                            <li>NASA TLX: Evaluated via Pairwise Comparisons (weight) and Rating Scales, calculating Weighted Rating as Sum(Weight) / Sum(Weight*Rating).</li>
-                            <li>Affinity Diagram: Categorized user feedback into themes like "Baseline Drawbacks" (distraction, bad time management) and "Spatial timers benefits" (visibility, intuitive, easy to operate).</li>
-                        </ul>
-                        <p class="text-lg leading-relaxed text-text-light/90 dark:text-text-dark/90 font-body mb-2">
-                            <strong class="text-primary">Findings:</strong>
-                        </p>
-                        <ul class="list-disc pl-6 text-lg leading-relaxed text-text-light/90 dark:text-text-dark/90 font-body space-y-2">
-                            <li>Impact on Workload: No statistically significant reductions in workload, but mean scores were slightly lower than single-device timers across 6 factors (Mental Demand, Physical Demand, etc.).</li>
-                            <li>Interview Data: Highlighted intuitiveness of time perception, smoother attention switching in multitasking, and appreciation for interactive features/innovations.</li>
-                        </ul>
-<!--                        <p class="text-lg leading-relaxed text-text-light/90 dark:text-text-dark/90 font-body pl-6 mb-4">-->
-<!--                            *Corresponding visuals: Multi-task setups (e.g., Task 4-5 with cups, beads), NASA TLX rating scales, Affinity Diagram boards, t-test and bar chart comparisons.-->
+                            <!-- Baseline -->
+                            <div class="rounded-xl bg-background-light/70 dark:bg-background-dark/40 p-4 ring-1 ring-subtle-light">
+                                <div class="flex items-center justify-between">
+                                    <div class="font-semibold text-primary">Baseline Timer (phone)</div>
+                                    <div class="text-2xl font-extrabold text-success">66.02</div>
+                                </div>
+                                <div class="mt-3 h-2 w-full rounded-full bg-subtle-light/60 overflow-hidden">
+                                    <div class="h-full rounded-full bg-success"
+                                         style="width:66.02%"></div>
+                                </div>
+                                <div class="mt-2 text-xs text-primary/60">Same task structure</div>
+                            </div>
+                        </div>
+
+                        <!-- 差值亮点 -->
+                        <div class="mt-6 grid gap-4 sm:grid-cols-3">
+                            <div class="rounded-xl bg-success/10 ring-1 ring-success/30 p-4">
+                                <div class="text-xs text-success/80">Participants reporting higher efficiency</div>
+                                <div class="mt-1 text-2xl font-bold text-success">59%</div>
+                            </div>
+                            <div class="rounded-xl bg-primary/10 ring-1 ring-primary/30 p-4">
+                                <div class="text-xs text-primary/80">Absolute SUS difference</div>
+                                <div class="mt-1 text-2xl font-bold text-primary">+13.41</div>
+                            </div>
+                            <div class="rounded-xl bg-secondary/10 ring-1 ring-secondary/30 p-4">
+                                <div class="text-xs text-secondary/80">Interpretation</div>
+                                <div class="mt-1 font-semibold text-secondary">Spatial Timer ≈ “Good–Excellent” range</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 折叠详情：Scenario / Observation / Findings（零JS，原生details） -->
+                    <div class="grid gap-4">
+                        <details class="group rounded-xl border border-subtle-light bg-white/70 dark:bg-background-dark/60 p-4 open:shadow-sm">
+                            <summary class="flex cursor-pointer list-none items-center justify-between">
+                                <span class="font-semibold text-primary">Scenario Design & Implementation</span>
+                                <svg class="h-5 w-5 text-primary/70 transition group-open:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-width="2" stroke-linecap="round" d="M6 9l6 6 6-6"/>
+                                </svg>
+                            </summary>
+                            <ul class="mt-3 list-disc pl-6 text-primary/85 space-y-2">
+                                <li>Built an AR environment using <b>OVR Camera Rig</b> (Passthrough on Meta Quest) to integrate Spatial Timers with the real world.</li>
+                                <li>Deployed Spatial Timer prefabs and added debugging UI (hand model line renderers:
+                                    <span class="rounded px-1.5 py-0.5 bg-success/15 text-success text-xs">green</span> valid,
+                                    <span class="rounded px-1.5 py-0.5 bg-secondary/15 text-secondary text-xs">red</span> otherwise).
+                                </li>
+                            </ul>
+                        </details>
+
+                        <details class="group rounded-xl border border-subtle-light bg-white/70 dark:bg-background-dark/60 p-4">
+                            <summary class="flex cursor-pointer list-none items-center justify-between">
+                                <span class="font-semibold text-primary">Observation Data</span>
+                                <svg class="h-5 w-5 text-primary/70 transition group-open:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-width="2" stroke-linecap="round" d="M6 9l6 6 6-6"/>
+                                </svg>
+                            </summary>
+                            <ul class="mt-3 list-disc pl-6 text-primary/85 space-y-2">
+                                <li>Used a standardized <b>SUS</b> questionnaire.</li>
+                                <li>Spatial Timer and Baseline Timer shared the same task structure for fair comparison.</li>
+                            </ul>
+                        </details>
+
+                        <details class="group rounded-xl border border-subtle-light bg-white/70 dark:bg-background-dark/60 p-4">
+                            <summary class="flex cursor-pointer list-none items-center justify-between">
+                                <span class="font-semibold text-primary">Findings</span>
+                                <svg class="h-5 w-5 text-primary/70 transition group-open:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-width="2" stroke-linecap="round" d="M6 9l6 6 6-6"/>
+                                </svg>
+                            </summary>
+                            <ul class="mt-3 list-disc pl-6 text-primary/85 space-y-2">
+                                <li>Spatial Timer showed a slight efficiency gain in timer generation tasks.</li>
+                                <li>Challenges: spatial misalignment; inconsistent haptic/visual cues.</li>
+                            </ul>
+                        </details>
+                    </div>
+
+                    <!-- Outcome 高亮条 -->
+<!--                    <div class="rounded-2xl border border-accent/30 bg-accent/10 p-5">-->
+<!--                        <div class="font-semibold ext-sm uppercase tracking-wide text-accent">Outcome</div>-->
+<!--                        <p class="text-accent/90">-->
+<!--                            Spatial Timers outperformed single-device timers on SUS and perceived efficiency.-->
 <!--                        </p>-->
+<!--                    </div>-->
 
-                        <!-- Future Work 部分 -->
-<!--                        <div class="mt-8">-->
-<!--                            <h4 class="text-xl font-bold text-secondary mb-3">Future Work</h4>-->
-<!--                            <ul class="list-disc pl-6 text-lg leading-relaxed text-text-light/90 dark:text-text-dark/90 font-body space-y-2">-->
-<!--                                <li>Expand research with <strong>More Sample Size</strong> to enhance statistical power.</li>-->
-<!--                                <li>Include <strong>Diverse user demographics</strong> to assess generalizability across different user groups.</li>-->
-<!--                            </ul>-->
-<!--                        </div>-->
+                    <div class="bg-sheet p-4 border-l-4 border-accent">
+                        <div class="text-sm uppercase tracking-wide text-accent">Outcome</div>
+                        <p class="mt-1 text-subtle-dark">Spatial Timer outperformed the phone timer on SUS and perceived efficiency.</p>
+                    </div>
+
+                </section>
+
+
+                <section class="mt-14 space-y-8" id="study-3">
+                    <!-- 标题 + 标签 -->
+                    <div class="flex items-center gap-3 flex-wrap">
+                        <h3 class="text-3xl font-display font-bold text-secondary">Study 3</h3>
+                        <span class="rounded-full bg-accent/15 text-accent px-3 py-1 text-xs font-semibold">Multi-task Switching</span>
+                        <span class="rounded-full bg-success/15 text-success px-3 py-1 text-xs font-semibold">NASA-TLX</span>
+                        <span class="rounded-full bg-primary/10 text-primary px-3 py-1 text-xs font-semibold">Attention Management</span>
+                    </div>
+
+                    <!-- 顶部摘要卡 -->
+                    <div class="rounded-2xl border border-subtle-light bg-white/80 dark:bg-background-dark/60 p-6 shadow-sm">
+                        <p class="text-lg text-primary/90">
+                            <span class="font-semibold text-primary">Core Objective:</span>
+                            Evaluate the effectiveness of Spatial Timer for multi-task switching & attention management
+                            compared with a traditional phone timer.
+                        </p>
+                        <div class="mt-4 grid gap-3 sm:grid-cols-3">
+                            <div class="rounded-xl border border-subtle-light/70 bg-background-light/60 dark:bg-background-dark/40 p-4">
+                                <div class="text-xs uppercase tracking-wide text-primary/60">Setup</div>
+                                <div class="mt-1 font-semibold text-primary">5 Spatial Timers in 3D space</div>
+                            </div>
+                            <div class="rounded-xl border border-subtle-light/70 bg-background-light/60 dark:bg-background-dark/40 p-4">
+                                <div class="text-xs uppercase tracking-wide text-primary/60">Prompting</div>
+                                <div class="mt-1 font-semibold text-primary"><code>randomSelect.cs</code> alerts 1/min</div>
+                            </div>
+                            <div class="rounded-xl border border-subtle-light/70 bg-background-light/60 dark:bg-background-dark/40 p-4">
+                                <div class="text-xs uppercase tracking-wide text-primary/60">Measures</div>
+                                <div class="mt-1 font-semibold text-primary">NASA-TLX (weighted) + interview</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Demo Video -->
+                    <a href="https://youtube.com/shorts/KwfpNh1fHKQ" target="_blank"
+                       class="group block rounded-2xl bg-white/80 p-4 shadow-md ring-1 ring-subtle-light hover:shadow-xl hover:ring-accent/40 transition">
+                        <div class="relative aspect-video w-full overflow-hidden rounded-xl">
+                            <img src="AR3.jpg" alt="Study 3 Demo" class="h-full w-full object-cover transition group-hover:scale-[1.02]">
+                            <div class="absolute inset-0 grid place-items-center">
+                                <div class="rounded-full bg-black/50 p-4 backdrop-blur-[2px] transition group-hover:bg-black/60">
+                                    <svg class="h-8 w-8 text-white" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
+                                </div>
+                            </div>
+                            <span class="absolute left-3 top-3 rounded-full bg-secondary/90 px-2 py-1 text-xs font-semibold text-white">Demo</span>
+                        </div>
+                        <div class="mt-3 flex items-center justify-between">
+                            <p class="text-primary font-semibold">AR Multi-task Scenario – Full Video</p>
+                            <span class="text-xs text-primary/60">Open on YouTube →</span>
+                        </div>
+                    </a>
+
+                    <!-- TLX 对比卡 -->
+                    <div class="rounded-2xl border border-subtle-light bg-white/80 dark:bg-background-dark/60 p-6 shadow-sm">
+                        <div class="flex items-end justify-between gap-4 flex-wrap">
+                            <h4 class="text-xl font-display font-bold text-primary">NASA-TLX (Weighted)</h4>
+                            <div class="text-sm text-primary/70">Lower is better (0–100)</div>
+                        </div>
+
+                        <div class="mt-6 grid gap-6 sm:grid-cols-2">
+                            <!-- Spatial Timer -->
+                            <div class="rounded-xl bg-background-light/70 dark:bg-background-dark/40 p-4 ring-1 ring-subtle-light">
+                                <div class="flex items-center justify-between">
+                                    <div class="font-semibold text-primary">Spatial Timer</div>
+                                    <div class="text-2xl font-extrabold text-accent">62.68</div>
+                                </div>
+                                <div class="mt-3 h-2 w-full rounded-full bg-subtle-light/60 overflow-hidden">
+                                    <div class="h-full rounded-full bg-accent" style="width:62.68%"></div>
+                                </div>
+                                <div class="mt-2 text-xs text-primary/60">Weighted by pairwise comparisons</div>
+                            </div>
+
+                            <!-- Baseline -->
+                            <div class="rounded-xl bg-background-light/70 dark:bg-background-dark/40 p-4 ring-1 ring-subtle-light">
+                                <div class="flex items-center justify-between">
+                                    <div class="font-semibold text-primary">Baseline Timer (phone)</div>
+                                    <div class="text-2xl font-extrabold text-success">64.62</div>
+                                </div>
+                                <div class="mt-3 h-2 w-full rounded-full bg-subtle-light/60 overflow-hidden">
+                                    <div class="h-full rounded-full bg-success" style="width:64.62%"></div>
+                                </div>
+                                <div class="mt-2 text-xs text-primary/60">Same multi-task structure</div>
+                            </div>
+                        </div>
+
+                        <!-- 差值 + 质性亮点 -->
+                        <div class="mt-6 grid gap-4 sm:grid-cols-3">
+                            <div class="rounded-xl bg-primary/10 ring-1 ring-primary/30 p-4">
+                                <div class="text-xs text-primary/80">Absolute difference</div>
+                                <div class="mt-1 text-2xl font-bold text-primary">−1.94</div>
+                                <p class="mt-1 text-xs text-primary/70">No significant reduction in workload overall.</p>
+                            </div>
+                            <div class="rounded-xl bg-success/10 ring-1 ring-success/30 p-4">
+                                <div class="text-xs text-success/80">Qual themes</div>
+                                <p class="mt-1 text-sm text-success/90">Intuitive time perception; smoother switching; appreciation for interactive features.</p>
+                            </div>
+                            <div class="rounded-xl bg-secondary/10 ring-1 ring-secondary/30 p-4">
+                                <div class="text-xs text-secondary/80">Baseline drawbacks</div>
+                                <p class="mt-1 text-sm text-secondary/90">Distraction; weaker time management cues.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 折叠详情（零 JS） -->
+                    <div class="grid gap-4">
+                        <details class="group rounded-xl border border-subtle-light bg-white/70 dark:bg-background-dark/60 p-4 open:shadow-sm">
+                            <summary class="flex cursor-pointer list-none items-center justify-between">
+                                <span class="font-semibold text-primary">Scenario Design & Implementation</span>
+                                <svg class="h-5 w-5 text-primary/70 transition group-open:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-width="2" stroke-linecap="round" d="M6 9l6 6 6-6"/>
+                                </svg>
+                            </summary>
+                            <ul class="mt-3 list-disc pl-6 text-primary/85 space-y-2">
+                                <li>Placed <b>5 Spatial Timers</b> side-by-side in 3D; positions adjusted to lab scale.</li>
+                                <li><code>randomSelect.cs</code> prompts one timer per minute (audio/scale) to drive attention shifts.</li>
+                            </ul>
+                        </details>
+
+                        <details class="group rounded-xl border border-subtle-light bg-white/70 dark:bg-background-dark/60 p-4">
+                            <summary class="flex cursor-pointer list-none items-center justify-between">
+                                <span class="font-semibold text-primary">Observation Data & Scoring</span>
+                                <svg class="h-5 w-5 text-primary/70 transition group-open:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-width="2" stroke-linecap="round" d="M6 9l6 6 6-6"/>
+                                </svg>
+                            </summary>
+                            <ul class="mt-3 list-disc pl-6 text-primary/85 space-y-2">
+                                <li>NASA-TLX weighted via pairwise comparisons & rating scales:
+                                    <span class="rounded bg-background-light/60 px-1.5 py-0.5 text-xs">Sum(Weight)/Sum(Weight×Rating)</span>.
+                                </li>
+                                <li>Post-interview affinity mapping into "Baseline drawbacks" & "Spatial timer benefits".</li>
+                            </ul>
+                        </details>
+
+                        <details class="group rounded-xl border border-subtle-light bg-white/70 dark:bg-background-dark/60 p-4">
+                            <summary class="flex cursor-pointer list-none items-center justify-between">
+                                <span class="font-semibold text-primary">Findings</span>
+                                <svg class="h-5 w-5 text-primary/70 transition group-open:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-width="2" stroke-linecap="round" d="M6 9l6 6 6-6"/>
+                                </svg>
+                            </summary>
+                            <ul class="mt-3 list-disc pl-6 text-primary/85 space-y-2">
+                                <li>No statistically significant workload reduction across TLX factors, though Spatial Timer mean was slightly lower.</li>
+                                <li>Interviews: better time sense, smoother attention switching, strong appreciation for interactive feedback.</li>
+                            </ul>
+                        </details>
+                    </div>
+
+                    <!-- Outcome 高亮条 -->
+                    <div class="rounded-2xl border border-accent/30 bg-accent/10 p-5">
+                        <div class="font-semibold text-accent">Outcome</div>
+                        <p class="text-accent/90">
+                            Spatial Timer showed comparable workload to phone timers (slightly lower mean). Qualitative feedback supports its intuitiveness for multi-task switching.
+                        </p>
                     </div>
                 </section>
 
@@ -1076,8 +1127,12 @@
                     <h3 class="text-2xl font-display font-bold mb-4 text-secondary">Future Work</h3>
                     <p class="text-lg leading-relaxed text-text-light/90 dark:text-text-dark/90 mb-6 font-body">
                     <ul class="list-disc pl-6 text-lg leading-relaxed text-text-light/90 dark:text-text-dark/90 font-body space-y-2">
-                        <li>Expand research with <strong class="text-primary">More Sample Size</strong> to enhance statistical power.</li>
-                        <li>Include <strong class="text-primary">Diverse user demographics</strong> to assess generalizability across different user groups.</li>
+                        <li>Expand research with <strong class="text-primary">More Sample Size</strong> to enhance
+                            statistical power.
+                        </li>
+                        <li>Include <strong class="text-primary">Diverse user demographics</strong> to assess
+                            generalizability across different user groups.
+                        </li>
                     </ul>
                     </p>
 
